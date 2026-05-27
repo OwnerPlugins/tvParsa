@@ -1,0 +1,62 @@
+# parsatv translations
+# Copyright (C) 2025 Lululla Team
+# This file is distributed under the same license as the Lululla package.
+# [lululla] <ekekaz@gmail.com>, 2025.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: parsatv\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: 2026-05-27 20:40+0000\n"
+"Last-Translator:  <EMAIL@ADDRESS>\n"
+"Language-Team: Malay <translation-team-ms@lists.sourceforge.net>\n"
+"Language: ms\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgid "Back"
+msgstr "belakang"
+
+msgid "Congrats! You already have the latest version..."
+msgstr "tahniah! Anda sudah mempunyai versi terkini..."
+
+msgid "Convert"
+msgstr "Tukar"
+
+msgid "Do you want to install update ( %s ) now?"
+msgstr "Adakah anda mahu memasang kemas kini ( %s ) sekarang?"
+
+msgid "Exit"
+msgstr "Keluar"
+
+msgid "Loading data... Please wait"
+msgstr "Memuatkan data... Sila tunggu"
+
+msgid "PARSA ALL TV"
+msgstr "IA MUNCUL DI SEMUA TV"
+
+msgid "PARSA SPORT"
+msgstr "SUKAN PARSA"
+
+msgid "PARSA TV CATEGORY"
+msgstr "KATEGORI TV PARSA"
+
+msgid "Play"
+msgstr "Main"
+
+msgid "Please select ..."
+msgstr "Sila pilih..."
+
+msgid "Select"
+msgstr "Pilih"
+
+msgid "Update"
+msgstr "Kemas kini"
+
+msgid "Update Aborted!"
+msgstr "Kemas Kini Dibatalkan!"
+
+msgid "bouquets reloaded.."
+msgstr "sejambak diisi semula.."

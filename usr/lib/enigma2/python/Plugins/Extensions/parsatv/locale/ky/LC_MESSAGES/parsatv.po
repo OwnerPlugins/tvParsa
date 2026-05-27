@@ -1,0 +1,62 @@
+# parsatv translations
+# Copyright (C) 2025 Lululla Team
+# This file is distributed under the same license as the Lululla package.
+# [lululla] <ekekaz@gmail.com>, 2025.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: parsatv\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: 2026-05-27 20:40+0000\n"
+"Last-Translator:  <EMAIL@ADDRESS>\n"
+"Language-Team: Kirghiz <(nothing)>\n"
+"Language: ky\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgid "Back"
+msgstr "Артка"
+
+msgid "Congrats! You already have the latest version..."
+msgstr "Куттуктайбыз! Сизде мурунтан эле акыркы версия бар..."
+
+msgid "Convert"
+msgstr ""
+
+msgid "Do you want to install update ( %s ) now?"
+msgstr "Жаңыртууну ( %s ) азыр орноткуңуз келеби?"
+
+msgid "Exit"
+msgstr "Чыгыңыз"
+
+msgid "Loading data... Please wait"
+msgstr "Дайындар жүктөлүүдө... Күтө туруңуз"
+
+msgid "PARSA ALL TV"
+msgstr "БАРДЫК ТЕЛЕВИДЕНИЕДЕ ЧЫКТЫ"
+
+msgid "PARSA SPORT"
+msgstr "ПАРСА СПОРТ"
+
+msgid "PARSA TV CATEGORY"
+msgstr ""
+
+msgid "Play"
+msgstr ""
+
+msgid "Please select ..."
+msgstr "Сураныч, тандаңыз ..."
+
+msgid "Select"
+msgstr "Тандоо"
+
+msgid "Update"
+msgstr "Жаңыртуу"
+
+msgid "Update Aborted!"
+msgstr "Жаңыртуу токтотулду!"
+
+msgid "bouquets reloaded.."
+msgstr "букет кайра жүктөлдү.."

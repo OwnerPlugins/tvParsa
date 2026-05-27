@@ -1,0 +1,63 @@
+# parsatv translations
+# Copyright (C) 2025 Lululla Team
+# This file is distributed under the same license as the Lululla package.
+# [lululla] <ekekaz@gmail.com>, 2025.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: parsatv\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: 2026-05-27 20:43+0000\n"
+"Last-Translator:  <EMAIL@ADDRESS>\n"
+"Language-Team: Turkish <gnome-turk@gnome.org>\n"
+"Language: tr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+msgid "Back"
+msgstr "Geri"
+
+msgid "Congrats! You already have the latest version..."
+msgstr "Tebrikler! Zaten en son sürüme sahipsiniz..."
+
+msgid "Convert"
+msgstr "Dönüştürmek"
+
+msgid "Do you want to install update ( %s ) now?"
+msgstr "Güncellemeyi ( %s ) şimdi yüklemek istiyor musunuz?"
+
+msgid "Exit"
+msgstr "Çıkış"
+
+msgid "Loading data... Please wait"
+msgstr "Veri yükleniyor... Lütfen bekleyin"
+
+msgid "PARSA ALL TV"
+msgstr "TÜM TV'LERDE ÇIKTI"
+
+msgid "PARSA SPORT"
+msgstr "PARSA SPOR"
+
+msgid "PARSA TV CATEGORY"
+msgstr "PARSA TV KATEGORİSİ"
+
+msgid "Play"
+msgstr "Oynamak"
+
+msgid "Please select ..."
+msgstr "Lütfen seçin..."
+
+msgid "Select"
+msgstr "Seçme"
+
+msgid "Update"
+msgstr "Güncelleme"
+
+msgid "Update Aborted!"
+msgstr "Güncelleme İptal Edildi!"
+
+msgid "bouquets reloaded.."
+msgstr "buketler yeniden yüklendi.."

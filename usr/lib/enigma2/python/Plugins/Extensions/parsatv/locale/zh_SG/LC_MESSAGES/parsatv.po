@@ -1,0 +1,62 @@
+# parsatv translations
+# Copyright (C) 2025 Lululla Team
+# This file is distributed under the same license as the Lululla package.
+# [lululla] <ekekaz@gmail.com>, 2025.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: parsatv\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: 2026-05-27 20:44+0000\n"
+"Last-Translator:  <EMAIL@ADDRESS>\n"
+"Language-Team: Language zh-SG\n"
+"Language: zh-SG\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgid "Back"
+msgstr "后退"
+
+msgid "Congrats! You already have the latest version..."
+msgstr "恭喜！您已经拥有最新版本..."
+
+msgid "Convert"
+msgstr "转变"
+
+msgid "Do you want to install update ( %s ) now?"
+msgstr "您想立即安装更新 (%s) 吗？"
+
+msgid "Exit"
+msgstr "出口"
+
+msgid "Loading data... Please wait"
+msgstr "正在加载数据...请稍候"
+
+msgid "PARSA ALL TV"
+msgstr "它出现在所有电视上"
+
+msgid "PARSA SPORT"
+msgstr "帕莎体育"
+
+msgid "PARSA TV CATEGORY"
+msgstr "帕尔萨 电视类别"
+
+msgid "Play"
+msgstr "玩"
+
+msgid "Please select ..."
+msgstr "请选择..."
+
+msgid "Select"
+msgstr "选择"
+
+msgid "Update"
+msgstr "更新"
+
+msgid "Update Aborted!"
+msgstr "更新中止！"
+
+msgid "bouquets reloaded.."
+msgstr "花束已重新加载.."

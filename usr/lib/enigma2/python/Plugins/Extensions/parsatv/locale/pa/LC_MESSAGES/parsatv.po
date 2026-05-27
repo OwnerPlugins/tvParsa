@@ -1,0 +1,62 @@
+# parsatv translations
+# Copyright (C) 2025 Lululla Team
+# This file is distributed under the same license as the Lululla package.
+# [lululla] <ekekaz@gmail.com>, 2025.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: parsatv\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: 2026-05-27 20:41+0000\n"
+"Last-Translator:  <EMAIL@ADDRESS>\n"
+"Language-Team: Punjabi <punjabi-l10n@lists.sourceforge.net>\n"
+"Language: pa\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgid "Back"
+msgstr "ਪਿੱਛੇ"
+
+msgid "Congrats! You already have the latest version..."
+msgstr "ਵਧਾਈਆਂ! ਤੁਹਾਡੇ ਕੋਲ ਪਹਿਲਾਂ ਹੀ ਨਵੀਨਤਮ ਸੰਸਕਰਣ ਹੈ..."
+
+msgid "Convert"
+msgstr "ਬਦਲੋ"
+
+msgid "Do you want to install update ( %s ) now?"
+msgstr "ਕੀ ਤੁਸੀਂ ਹੁਣੇ ਅੱਪਡੇਟ (%s) ਨੂੰ ਸਥਾਪਿਤ ਕਰਨਾ ਚਾਹੁੰਦੇ ਹੋ?"
+
+msgid "Exit"
+msgstr "ਨਿਕਾਸ"
+
+msgid "Loading data... Please wait"
+msgstr "ਡਾਟਾ ਲੋਡ ਕੀਤਾ ਜਾ ਰਿਹਾ ਹੈ... ਕਿਰਪਾ ਕਰਕੇ ਉਡੀਕ ਕਰੋ"
+
+msgid "PARSA ALL TV"
+msgstr "ਇਹ ਸਾਰੇ ਟੀਵੀ 'ਤੇ ਦਿਖਾਈ ਦਿੱਤੀ"
+
+msgid "PARSA SPORT"
+msgstr "ਪਾਰਸਾ ਖੇਡ"
+
+msgid "PARSA TV CATEGORY"
+msgstr "ਪਾਰਸਾ ਟੀਵੀ ਸ਼੍ਰੇਣੀ"
+
+msgid "Play"
+msgstr "ਖੇਡੋ"
+
+msgid "Please select ..."
+msgstr "ਕਿਰਪਾ ਕਰਕੇ ਚੁਣੋ..."
+
+msgid "Select"
+msgstr "ਚੁਣੋ"
+
+msgid "Update"
+msgstr "ਅੱਪਡੇਟ ਕਰੋ"
+
+msgid "Update Aborted!"
+msgstr "ਅੱਪਡੇਟ ਅਧੂਰਾ ਛੱਡਿਆ ਗਿਆ!"
+
+msgid "bouquets reloaded.."
+msgstr "ਗੁਲਦਸਤੇ ਮੁੜ ਲੋਡ ਕੀਤੇ ਗਏ.."

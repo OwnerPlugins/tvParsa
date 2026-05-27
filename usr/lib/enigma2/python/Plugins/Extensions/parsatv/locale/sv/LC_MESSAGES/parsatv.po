@@ -1,0 +1,63 @@
+# parsatv translations
+# Copyright (C) 2025 Lululla Team
+# This file is distributed under the same license as the Lululla package.
+# [lululla] <ekekaz@gmail.com>, 2025.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: parsatv\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: 2026-05-27 20:42+0000\n"
+"Last-Translator:  <EMAIL@ADDRESS>\n"
+"Language-Team: Swedish <tp-sv@listor.tp-sv.se>\n"
+"Language: sv\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+msgid "Back"
+msgstr "Tillbaka"
+
+msgid "Congrats! You already have the latest version..."
+msgstr "grattis! Du har redan den senaste versionen..."
+
+msgid "Convert"
+msgstr "Konvertera"
+
+msgid "Do you want to install update ( %s ) now?"
+msgstr "Vill du installera uppdateringen ( %s ) nu?"
+
+msgid "Exit"
+msgstr "Utgång"
+
+msgid "Loading data... Please wait"
+msgstr "Laddar data... Var god vänta"
+
+msgid "PARSA ALL TV"
+msgstr "DET KOM PÅ ALL TV"
+
+msgid "PARSA SPORT"
+msgstr ""
+
+msgid "PARSA TV CATEGORY"
+msgstr "PARSA TV KATEGORI"
+
+msgid "Play"
+msgstr "Spela"
+
+msgid "Please select ..."
+msgstr "Vänligen välj..."
+
+msgid "Select"
+msgstr "Välja"
+
+msgid "Update"
+msgstr "Uppdatera"
+
+msgid "Update Aborted!"
+msgstr "Uppdatering avbröts!"
+
+msgid "bouquets reloaded.."
+msgstr "buketter laddade om.."

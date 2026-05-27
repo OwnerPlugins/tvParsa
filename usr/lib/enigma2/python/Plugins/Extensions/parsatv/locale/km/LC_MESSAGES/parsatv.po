@@ -1,0 +1,62 @@
+# parsatv translations
+# Copyright (C) 2025 Lululla Team
+# This file is distributed under the same license as the Lululla package.
+# [lululla] <ekekaz@gmail.com>, 2025.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: parsatv\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: 2026-05-27 20:39+0000\n"
+"Last-Translator:  <EMAIL@ADDRESS>\n"
+"Language-Team: Central Khmer\n"
+"Language: km\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgid "Back"
+msgstr "ត្រឡប់មកវិញ"
+
+msgid "Congrats! You already have the latest version..."
+msgstr "អបអរសាទរ! អ្នកមានកំណែចុងក្រោយបង្អស់..."
+
+msgid "Convert"
+msgstr "បម្លែង"
+
+msgid "Do you want to install update ( %s ) now?"
+msgstr "តើអ្នកចង់ដំឡើងអាប់ដេត (%s) ឥឡូវនេះទេ?"
+
+msgid "Exit"
+msgstr "ចេញ"
+
+msgid "Loading data... Please wait"
+msgstr "កំពុងផ្ទុកទិន្នន័យ... សូមរង់ចាំ"
+
+msgid "PARSA ALL TV"
+msgstr "វាបង្ហាញនៅលើទូរទស្សន៍ទាំងអស់។"
+
+msgid "PARSA SPORT"
+msgstr ""
+
+msgid "PARSA TV CATEGORY"
+msgstr "ប្រភេទទូរទស្សន៍ PARSA"
+
+msgid "Play"
+msgstr "លេង"
+
+msgid "Please select ..."
+msgstr "សូមជ្រើសរើស..."
+
+msgid "Select"
+msgstr "ជ្រើសរើស"
+
+msgid "Update"
+msgstr "ធ្វើបច្ចុប្បន្នភាព"
+
+msgid "Update Aborted!"
+msgstr "ការអាប់ដេតត្រូវបានលុបចោល!"
+
+msgid "bouquets reloaded.."
+msgstr "ភួងត្រូវបានផ្ទុកឡើងវិញ .."

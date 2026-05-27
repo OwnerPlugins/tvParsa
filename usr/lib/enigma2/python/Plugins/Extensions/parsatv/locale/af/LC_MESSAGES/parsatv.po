@@ -1,0 +1,62 @@
+# parsatv translations
+# Copyright (C) 2025 Lululla Team
+# This file is distributed under the same license as the Lululla package.
+# [lululla] <ekekaz@gmail.com>, 2025.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: parsatv\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: 2026-05-27 20:36+0000\n"
+"Last-Translator:  <EMAIL@ADDRESS>\n"
+"Language-Team: Afrikaans <i18n@af.org.za>\n"
+"Language: af\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgid "Back"
+msgstr "Terug"
+
+msgid "Congrats! You already have the latest version..."
+msgstr "Geluk! Jy het reeds die nuutste weergawe..."
+
+msgid "Convert"
+msgstr "Skakel om"
+
+msgid "Do you want to install update ( %s ) now?"
+msgstr "Wil jy nou opdatering ( %s ) installeer?"
+
+msgid "Exit"
+msgstr "Verlaat"
+
+msgid "Loading data... Please wait"
+msgstr "Laai tans data... Wag asseblief"
+
+msgid "PARSA ALL TV"
+msgstr "DIT HET OP ALLE TV VERSKYN"
+
+msgid "PARSA SPORT"
+msgstr ""
+
+msgid "PARSA TV CATEGORY"
+msgstr "PARSA TV KATEGORIE"
+
+msgid "Play"
+msgstr "Speel"
+
+msgid "Please select ..."
+msgstr "Kies asseblief..."
+
+msgid "Select"
+msgstr "Kies"
+
+msgid "Update"
+msgstr "Dateer op"
+
+msgid "Update Aborted!"
+msgstr "Opdatering afgelas!"
+
+msgid "bouquets reloaded.."
+msgstr "ruikers herlaai.."

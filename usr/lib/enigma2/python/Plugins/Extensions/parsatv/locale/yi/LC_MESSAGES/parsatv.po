@@ -1,0 +1,62 @@
+# parsatv translations
+# Copyright (C) 2025 Lululla Team
+# This file is distributed under the same license as the Lululla package.
+# [lululla] <ekekaz@gmail.com>, 2025.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: parsatv\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: 2026-05-27 20:44+0000\n"
+"Last-Translator:  <EMAIL@ADDRESS>\n"
+"Language-Team: Yiddish\n"
+"Language: yi\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgid "Back"
+msgstr "צוריק"
+
+msgid "Congrats! You already have the latest version..."
+msgstr "מאַזל - טאָוו! איר האָט שוין די לעצטע ווערסיע ..."
+
+msgid "Convert"
+msgstr "קאָנווערט"
+
+msgid "Do you want to install update ( %s ) now?"
+msgstr "צי איר ווילן צו ינסטאַלירן דערהייַנטיקן (%s) איצט?"
+
+msgid "Exit"
+msgstr "אַרויסגאַנג"
+
+msgid "Loading data... Please wait"
+msgstr "לאָודינג דאַטן... ביטע וואַרטן"
+
+msgid "PARSA ALL TV"
+msgstr "עס איז ארויס אויף אַלע טעלעוויזיע"
+
+msgid "PARSA SPORT"
+msgstr ""
+
+msgid "PARSA TV CATEGORY"
+msgstr "PARSA טעלעוויזיע קאַטעגאָריע"
+
+msgid "Play"
+msgstr "שפּיל"
+
+msgid "Please select ..."
+msgstr "ביטע אויסקלייַבן ..."
+
+msgid "Select"
+msgstr "אויסקלייַבן"
+
+msgid "Update"
+msgstr "דערהייַנטיקן"
+
+msgid "Update Aborted!"
+msgstr "דערהייַנטיקן אַבאָרטיד!"
+
+msgid "bouquets reloaded.."
+msgstr "בוקייז רילאָודיד.."

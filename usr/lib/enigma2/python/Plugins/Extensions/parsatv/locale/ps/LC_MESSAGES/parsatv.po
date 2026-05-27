@@ -1,0 +1,62 @@
+# parsatv translations
+# Copyright (C) 2025 Lululla Team
+# This file is distributed under the same license as the Lululla package.
+# [lululla] <ekekaz@gmail.com>, 2025.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: parsatv\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: 2026-05-27 20:41+0000\n"
+"Last-Translator:  <EMAIL@ADDRESS>\n"
+"Language-Team: Pashto\n"
+"Language: ps\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgid "Back"
+msgstr "شاته"
+
+msgid "Congrats! You already have the latest version..."
+msgstr "مبارک شه! تاسو لا دمخه وروستۍ نسخه لرئ ..."
+
+msgid "Convert"
+msgstr "بدلول"
+
+msgid "Do you want to install update ( %s ) now?"
+msgstr "ایا تاسو غواړئ اوسمهال (%s) نصب کړئ؟"
+
+msgid "Exit"
+msgstr "وتل"
+
+msgid "Loading data... Please wait"
+msgstr "د معلوماتو بارول... مهرباني وکړئ انتظار وکړئ"
+
+msgid "PARSA ALL TV"
+msgstr "دا په ټولو تلویزیونونو کې ښکاره شو"
+
+msgid "PARSA SPORT"
+msgstr "پارسا سپورت"
+
+msgid "PARSA TV CATEGORY"
+msgstr "د پارسا تلویزیون کټګوري"
+
+msgid "Play"
+msgstr "لوبې"
+
+msgid "Please select ..."
+msgstr "مهرباني وکړئ غوره کړئ ..."
+
+msgid "Select"
+msgstr "وټاکئ"
+
+msgid "Update"
+msgstr "تازه کول"
+
+msgid "Update Aborted!"
+msgstr "تازه کول لغوه شوي!"
+
+msgid "bouquets reloaded.."
+msgstr "ګلدان بیا بار شوي.."

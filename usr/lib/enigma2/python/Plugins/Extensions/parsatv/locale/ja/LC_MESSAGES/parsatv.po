@@ -1,0 +1,63 @@
+# parsatv translations
+# Copyright (C) 2025 Lululla Team
+# This file is distributed under the same license as the Lululla package.
+# [lululla] <ekekaz@gmail.com>, 2025.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: parsatv\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: 2026-05-27 20:39+0000\n"
+"Last-Translator:  <EMAIL@ADDRESS>\n"
+"Language-Team: Japanese <translation-team-ja@lists.sourceforge.net>\n"
+"Language: ja\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+msgid "Back"
+msgstr "戻る"
+
+msgid "Congrats! You already have the latest version..."
+msgstr "おめでとうございます！すでに最新バージョンをお持ちです..."
+
+msgid "Convert"
+msgstr "変換する"
+
+msgid "Do you want to install update ( %s ) now?"
+msgstr "今すぐアップデート ( %s ) をインストールしますか?"
+
+msgid "Exit"
+msgstr "出口"
+
+msgid "Loading data... Please wait"
+msgstr "データをロードしています...お待ちください"
+
+msgid "PARSA ALL TV"
+msgstr "すべてのテレビに登場しました"
+
+msgid "PARSA SPORT"
+msgstr "パルサスポーツ"
+
+msgid "PARSA TV CATEGORY"
+msgstr "PARSA TV カテゴリ"
+
+msgid "Play"
+msgstr "遊ぶ"
+
+msgid "Please select ..."
+msgstr "選択してください..."
+
+msgid "Select"
+msgstr "選択"
+
+msgid "Update"
+msgstr "アップデート"
+
+msgid "Update Aborted!"
+msgstr "アップデートが中止されました!"
+
+msgid "bouquets reloaded.."
+msgstr "花束がリロードされました。"

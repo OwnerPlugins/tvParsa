@@ -1,0 +1,63 @@
+# parsatv translations
+# Copyright (C) 2025 Lululla Team
+# This file is distributed under the same license as the Lululla package.
+# [lululla] <ekekaz@gmail.com>, 2025.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: parsatv\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: 2026-05-27 20:43+0000\n"
+"Last-Translator:  <EMAIL@ADDRESS>\n"
+"Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
+"Language: uk\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+
+msgid "Back"
+msgstr "Назад"
+
+msgid "Congrats! You already have the latest version..."
+msgstr "Вітаю! У вас уже є остання версія..."
+
+msgid "Convert"
+msgstr "конвертувати"
+
+msgid "Do you want to install update ( %s ) now?"
+msgstr "Бажаєте встановити оновлення ( %s ) зараз?"
+
+msgid "Exit"
+msgstr "Вихід"
+
+msgid "Loading data... Please wait"
+msgstr "Завантаження даних... Зачекайте"
+
+msgid "PARSA ALL TV"
+msgstr "ЦЕ З'ЯВИЛОСЯ ПО ВСІМ ТБ"
+
+msgid "PARSA SPORT"
+msgstr "ПАРСА СПОРТ"
+
+msgid "PARSA TV CATEGORY"
+msgstr "PARSA TV КАТЕГОРІЯ"
+
+msgid "Play"
+msgstr "грати"
+
+msgid "Please select ..."
+msgstr "Виберіть..."
+
+msgid "Select"
+msgstr "Виберіть"
+
+msgid "Update"
+msgstr "оновлення"
+
+msgid "Update Aborted!"
+msgstr "Оновлення скасовано!"
+
+msgid "bouquets reloaded.."
+msgstr "перезавантаження букетів.."

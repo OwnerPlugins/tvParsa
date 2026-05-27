@@ -1,0 +1,63 @@
+# parsatv translations
+# Copyright (C) 2025 Lululla Team
+# This file is distributed under the same license as the Lululla package.
+# [lululla] <ekekaz@gmail.com>, 2025.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: parsatv\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: 2026-05-27 20:37+0000\n"
+"Last-Translator:  <EMAIL@ADDRESS>\n"
+"Language-Team: Estonian <linux-ee@lists.eenet.ee>\n"
+"Language: et\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+msgid "Back"
+msgstr "Tagasi"
+
+msgid "Congrats! You already have the latest version..."
+msgstr "Õnnitlused! Teil on juba uusim versioon..."
+
+msgid "Convert"
+msgstr "Teisenda"
+
+msgid "Do you want to install update ( %s ) now?"
+msgstr "Kas soovite värskenduse ( %s ) kohe installida?"
+
+msgid "Exit"
+msgstr "Välju"
+
+msgid "Loading data... Please wait"
+msgstr "Andmete laadimine... Palun oodake"
+
+msgid "PARSA ALL TV"
+msgstr "SEE ILMUS KÕIGIS TELERIS"
+
+msgid "PARSA SPORT"
+msgstr ""
+
+msgid "PARSA TV CATEGORY"
+msgstr "PARSA TV KATEGOORIA"
+
+msgid "Play"
+msgstr "Mängi"
+
+msgid "Please select ..."
+msgstr "Palun valige..."
+
+msgid "Select"
+msgstr "Valige"
+
+msgid "Update"
+msgstr "Värskenda"
+
+msgid "Update Aborted!"
+msgstr "Värskendus katkestatud!"
+
+msgid "bouquets reloaded.."
+msgstr "kimbud uuesti laetud.."

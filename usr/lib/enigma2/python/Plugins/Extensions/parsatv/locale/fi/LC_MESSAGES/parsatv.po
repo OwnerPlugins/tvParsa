@@ -1,0 +1,63 @@
+# parsatv translations
+# Copyright (C) 2025 Lululla Team
+# This file is distributed under the same license as the Lululla package.
+# [lululla] <ekekaz@gmail.com>, 2025.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: parsatv\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: 2026-05-27 20:38+0000\n"
+"Last-Translator:  <EMAIL@ADDRESS>\n"
+"Language-Team: Finnish <translation-team-fi@lists.sourceforge.net>\n"
+"Language: fi\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+msgid "Back"
+msgstr "Takaisin"
+
+msgid "Congrats! You already have the latest version..."
+msgstr "Onnittelut! Sinulla on jo uusin versio..."
+
+msgid "Convert"
+msgstr "Muuntaa"
+
+msgid "Do you want to install update ( %s ) now?"
+msgstr "Haluatko asentaa päivityksen ( %s ) nyt?"
+
+msgid "Exit"
+msgstr "Poistu"
+
+msgid "Loading data... Please wait"
+msgstr "Ladataan tietoja... Odota"
+
+msgid "PARSA ALL TV"
+msgstr "SE NÄYTYI KAIKISSA televisioissa"
+
+msgid "PARSA SPORT"
+msgstr ""
+
+msgid "PARSA TV CATEGORY"
+msgstr "PARSA TV -LUOKKA"
+
+msgid "Play"
+msgstr "Pelata"
+
+msgid "Please select ..."
+msgstr "Ole hyvä ja valitse..."
+
+msgid "Select"
+msgstr "Valitse"
+
+msgid "Update"
+msgstr "Päivittää"
+
+msgid "Update Aborted!"
+msgstr "Päivitys keskeytetty!"
+
+msgid "bouquets reloaded.."
+msgstr "kimppuja ladattu uudelleen.."

@@ -1,0 +1,62 @@
+# parsatv translations
+# Copyright (C) 2025 Lululla Team
+# This file is distributed under the same license as the Lululla package.
+# [lululla] <ekekaz@gmail.com>, 2025.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: parsatv\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: 2026-05-27 20:37+0000\n"
+"Last-Translator:  <EMAIL@ADDRESS>\n"
+"Language-Team: Bosnian <mtodorov@alu.hr>\n"
+"Language: bs\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgid "Back"
+msgstr "Nazad"
+
+msgid "Congrats! You already have the latest version..."
+msgstr "Congrats! Već imate najnoviju verziju..."
+
+msgid "Convert"
+msgstr "Pretvori"
+
+msgid "Do you want to install update ( %s ) now?"
+msgstr "Želite li sada instalirati ažuriranje ( %s )?"
+
+msgid "Exit"
+msgstr "Izađi"
+
+msgid "Loading data... Please wait"
+msgstr "Učitavanje podataka... Molimo pričekajte"
+
+msgid "PARSA ALL TV"
+msgstr "POJAVILO SE NA SVIM TV-ima"
+
+msgid "PARSA SPORT"
+msgstr ""
+
+msgid "PARSA TV CATEGORY"
+msgstr "PARSA TV KATEGORIJA"
+
+msgid "Play"
+msgstr "Igraj"
+
+msgid "Please select ..."
+msgstr "Molimo odaberite..."
+
+msgid "Select"
+msgstr "Odaberite"
+
+msgid "Update"
+msgstr "Ažuriraj"
+
+msgid "Update Aborted!"
+msgstr "Ažuriranje je prekinuto!"
+
+msgid "bouquets reloaded.."
+msgstr "buketi ponovo napunjeni.."

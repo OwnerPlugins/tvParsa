@@ -1,0 +1,63 @@
+# parsatv translations
+# Copyright (C) 2025 Lululla Team
+# This file is distributed under the same license as the Lululla package.
+# [lululla] <ekekaz@gmail.com>, 2025.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: parsatv\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: 2026-05-27 20:42+0000\n"
+"Last-Translator:  <EMAIL@ADDRESS>\n"
+"Language-Team: Slovak <sk-i18n@lists.linux.sk>\n"
+"Language: sk\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
+
+msgid "Back"
+msgstr "Späť"
+
+msgid "Congrats! You already have the latest version..."
+msgstr "gratulujem! Už máte najnovšiu verziu..."
+
+msgid "Convert"
+msgstr "Konvertovať"
+
+msgid "Do you want to install update ( %s ) now?"
+msgstr "Chcete nainštalovať aktualizáciu ( %s) teraz?"
+
+msgid "Exit"
+msgstr "VÝCHOD"
+
+msgid "Loading data... Please wait"
+msgstr "Načítavajú sa údaje... Čakajte prosím"
+
+msgid "PARSA ALL TV"
+msgstr "ZOBRAZILO SA TO NA VŠETKÝCH TV"
+
+msgid "PARSA SPORT"
+msgstr ""
+
+msgid "PARSA TV CATEGORY"
+msgstr "TV KATEGÓRIA PARSA"
+
+msgid "Play"
+msgstr "Hrať"
+
+msgid "Please select ..."
+msgstr "Vyberte prosím..."
+
+msgid "Select"
+msgstr "Vyberte"
+
+msgid "Update"
+msgstr "Aktualizovať"
+
+msgid "Update Aborted!"
+msgstr "Aktualizácia prerušená!"
+
+msgid "bouquets reloaded.."
+msgstr "kytice nabité.."

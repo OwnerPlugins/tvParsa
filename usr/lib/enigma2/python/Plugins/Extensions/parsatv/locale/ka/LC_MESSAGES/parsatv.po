@@ -1,0 +1,62 @@
+# parsatv translations
+# Copyright (C) 2025 Lululla Team
+# This file is distributed under the same license as the Lululla package.
+# [lululla] <ekekaz@gmail.com>, 2025.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: parsatv\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: 2026-05-27 20:39+0000\n"
+"Last-Translator:  <EMAIL@ADDRESS>\n"
+"Language-Team: Georgian <(nothing)>\n"
+"Language: ka\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgid "Back"
+msgstr "უკან"
+
+msgid "Congrats! You already have the latest version..."
+msgstr "გილოცავ! თქვენ უკვე გაქვთ უახლესი ვერსია..."
+
+msgid "Convert"
+msgstr "კონვერტაცია"
+
+msgid "Do you want to install update ( %s ) now?"
+msgstr "გსურთ განახლების ( %s ) ინსტალაცია ახლა?"
+
+msgid "Exit"
+msgstr "გასვლა"
+
+msgid "Loading data... Please wait"
+msgstr "იტვირთება მონაცემები... გთხოვთ დაელოდოთ"
+
+msgid "PARSA ALL TV"
+msgstr "ის გამოჩნდა ყველა ტელევიზორში"
+
+msgid "PARSA SPORT"
+msgstr ""
+
+msgid "PARSA TV CATEGORY"
+msgstr ""
+
+msgid "Play"
+msgstr "ითამაშეთ"
+
+msgid "Please select ..."
+msgstr "გთხოვთ, აირჩიოთ..."
+
+msgid "Select"
+msgstr "აირჩიეთ"
+
+msgid "Update"
+msgstr "განახლება"
+
+msgid "Update Aborted!"
+msgstr "განახლება შეწყდა!"
+
+msgid "bouquets reloaded.."
+msgstr "თაიგულები გადატვირთულია.."

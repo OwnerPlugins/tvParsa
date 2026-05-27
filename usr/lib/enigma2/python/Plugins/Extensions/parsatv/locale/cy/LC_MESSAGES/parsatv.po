@@ -1,0 +1,62 @@
+# parsatv translations
+# Copyright (C) 2025 Lululla Team
+# This file is distributed under the same license as the Lululla package.
+# [lululla] <ekekaz@gmail.com>, 2025.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: parsatv\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: 2026-05-27 20:37+0000\n"
+"Last-Translator:  <EMAIL@ADDRESS>\n"
+"Language-Team: Welsh\n"
+"Language: cy\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgid "Back"
+msgstr "Yn ol"
+
+msgid "Congrats! You already have the latest version..."
+msgstr "Llongyfarchiadau! Mae gennych y fersiwn diweddaraf yn barod..."
+
+msgid "Convert"
+msgstr "Trosi"
+
+msgid "Do you want to install update ( %s ) now?"
+msgstr "Ydych chi am osod diweddariad ( %s ) nawr?"
+
+msgid "Exit"
+msgstr "Ymadael"
+
+msgid "Loading data... Please wait"
+msgstr "Wrthi'n llwytho data... Arhoswch"
+
+msgid "PARSA ALL TV"
+msgstr "YMDDANGOS AR YR HOLL Deledu"
+
+msgid "PARSA SPORT"
+msgstr "CHWARAEON PARSA"
+
+msgid "PARSA TV CATEGORY"
+msgstr "CATEGORI PARSA TV"
+
+msgid "Play"
+msgstr "Chwarae"
+
+msgid "Please select ..."
+msgstr "Dewiswch ..."
+
+msgid "Select"
+msgstr "Dewiswch"
+
+msgid "Update"
+msgstr "Diweddariad"
+
+msgid "Update Aborted!"
+msgstr "Diweddariad wedi'i Erthylu!"
+
+msgid "bouquets reloaded.."
+msgstr "tuswau wedi'u hail-lwytho.."

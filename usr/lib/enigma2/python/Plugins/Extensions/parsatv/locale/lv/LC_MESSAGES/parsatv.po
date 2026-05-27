@@ -1,0 +1,63 @@
+# parsatv translations
+# Copyright (C) 2025 Lululla Team
+# This file is distributed under the same license as the Lululla package.
+# [lululla] <ekekaz@gmail.com>, 2025.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: parsatv\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: 2026-05-27 20:40+0000\n"
+"Last-Translator:  <EMAIL@ADDRESS>\n"
+"Language-Team: Latvian <translation-team-lv@lists.sourceforge.net>\n"
+"Language: lv\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n != 0 ? 1 : 2);\n"
+
+msgid "Back"
+msgstr "Atpakaļ"
+
+msgid "Congrats! You already have the latest version..."
+msgstr "Apsveicam! Jums jau ir jaunākā versija..."
+
+msgid "Convert"
+msgstr "Konvertēt"
+
+msgid "Do you want to install update ( %s ) now?"
+msgstr "Vai vēlaties instalēt atjauninājumu ( %s ) tūlīt?"
+
+msgid "Exit"
+msgstr "Iziet"
+
+msgid "Loading data... Please wait"
+msgstr "Notiek datu ielāde... Lūdzu, uzgaidiet"
+
+msgid "PARSA ALL TV"
+msgstr "TAS PARĀDĪJĀS VISOS TV"
+
+msgid "PARSA SPORT"
+msgstr ""
+
+msgid "PARSA TV CATEGORY"
+msgstr "PARSA TV KATEGORIJA"
+
+msgid "Play"
+msgstr "Spēlēt"
+
+msgid "Please select ..."
+msgstr "Lūdzu, atlasiet..."
+
+msgid "Select"
+msgstr "Izvēlieties"
+
+msgid "Update"
+msgstr "Atjaunināt"
+
+msgid "Update Aborted!"
+msgstr "Atjaunināšana pārtraukta!"
+
+msgid "bouquets reloaded.."
+msgstr "pušķi pārlādēti.."

@@ -1,0 +1,62 @@
+# parsatv translations
+# Copyright (C) 2025 Lululla Team
+# This file is distributed under the same license as the Lululla package.
+# [lululla] <ekekaz@gmail.com>, 2025.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: parsatv\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: 2026-05-27 20:40+0000\n"
+"Last-Translator:  <EMAIL@ADDRESS>\n"
+"Language-Team: Burmese\n"
+"Language: my\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgid "Back"
+msgstr "ကျော"
+
+msgid "Congrats! You already have the latest version..."
+msgstr "ဂုဏ်ပြုပါသည်။ သင့်တွင် နောက်ဆုံးထွက်ဗားရှင်းရှိနေပြီဖြစ်သည်။"
+
+msgid "Convert"
+msgstr "ပြောင်းပါ။"
+
+msgid "Do you want to install update ( %s ) now?"
+msgstr "အပ်ဒိတ် (%s) ကို ယခု ထည့်သွင်းလိုပါသလား။"
+
+msgid "Exit"
+msgstr "ထွက်ပေါက်"
+
+msgid "Loading data... Please wait"
+msgstr "ဒေတာကို ဖွင့်နေသည်... ကျေးဇူးပြု၍ ခဏစောင့်ပါ။"
+
+msgid "PARSA ALL TV"
+msgstr "TV အားလုံးတွင် ပေါ်လာသည်။"
+
+msgid "PARSA SPORT"
+msgstr "PARSA အားကစား"
+
+msgid "PARSA TV CATEGORY"
+msgstr "PARSA TV အမျိုးအစား"
+
+msgid "Play"
+msgstr "ကစားပါ။"
+
+msgid "Please select ..."
+msgstr "ရွေးပါ..."
+
+msgid "Select"
+msgstr "ရွေးချယ်ပါ။"
+
+msgid "Update"
+msgstr "အပ်ဒိတ်"
+
+msgid "Update Aborted!"
+msgstr "အပ်ဒိတ်ကို ဖျက်သိမ်းလိုက်ပါပြီ။"
+
+msgid "bouquets reloaded.."
+msgstr "ပန်းစည်းတွေပြန်တင်တယ်.."

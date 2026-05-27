@@ -1,0 +1,62 @@
+# parsatv translations
+# Copyright (C) 2025 Lululla Team
+# This file is distributed under the same license as the Lululla package.
+# [lululla] <ekekaz@gmail.com>, 2025.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: parsatv\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: 2026-05-27 20:39+0000\n"
+"Last-Translator:  <EMAIL@ADDRESS>\n"
+"Language-Team: Kannada <debian-l10n-kannada@lists.debian.org>\n"
+"Language: kn\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgid "Back"
+msgstr "ಹಿಂದೆ"
+
+msgid "Congrats! You already have the latest version..."
+msgstr "ಅಭಿನಂದನೆಗಳು! ನೀವು ಈಗಾಗಲೇ ಇತ್ತೀಚಿನ ಆವೃತ್ತಿಯನ್ನು ಹೊಂದಿರುವಿರಿ..."
+
+msgid "Convert"
+msgstr "ಪರಿವರ್ತಿಸಿ"
+
+msgid "Do you want to install update ( %s ) now?"
+msgstr "ನೀವು ಈಗ ನವೀಕರಣವನ್ನು (%s ) ಸ್ಥಾಪಿಸಲು ಬಯಸುವಿರಾ?"
+
+msgid "Exit"
+msgstr "ನಿರ್ಗಮಿಸಿ"
+
+msgid "Loading data... Please wait"
+msgstr "ಡೇಟಾವನ್ನು ಲೋಡ್ ಮಾಡಲಾಗುತ್ತಿದೆ... ದಯವಿಟ್ಟು ನಿರೀಕ್ಷಿಸಿ"
+
+msgid "PARSA ALL TV"
+msgstr "ಇದು ಎಲ್ಲಾ ಟಿವಿಯಲ್ಲಿ ಕಾಣಿಸಿಕೊಂಡಿದೆ"
+
+msgid "PARSA SPORT"
+msgstr "ಪಾರ್ಸಾ ಕ್ರೀಡೆ"
+
+msgid "PARSA TV CATEGORY"
+msgstr "ಪಾರ್ಸಾ ಟಿವಿ ವರ್ಗ"
+
+msgid "Play"
+msgstr "ಪ್ಲೇ ಮಾಡಿ"
+
+msgid "Please select ..."
+msgstr "ದಯವಿಟ್ಟು ಆಯ್ಕೆಮಾಡಿ..."
+
+msgid "Select"
+msgstr "ಆಯ್ಕೆ ಮಾಡಿ"
+
+msgid "Update"
+msgstr "ನವೀಕರಿಸಿ"
+
+msgid "Update Aborted!"
+msgstr "ನವೀಕರಣವನ್ನು ಸ್ಥಗಿತಗೊಳಿಸಲಾಗಿದೆ!"
+
+msgid "bouquets reloaded.."
+msgstr "ಹೂಗುಚ್ಛಗಳನ್ನು ಮರುಲೋಡ್ ಮಾಡಲಾಗಿದೆ.."

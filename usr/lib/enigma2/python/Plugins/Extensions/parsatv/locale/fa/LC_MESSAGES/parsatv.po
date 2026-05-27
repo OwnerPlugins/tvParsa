@@ -1,0 +1,62 @@
+# parsatv translations
+# Copyright (C) 2025 Lululla Team
+# This file is distributed under the same license as the Lululla package.
+# [lululla] <ekekaz@gmail.com>, 2025.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: parsatv\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: 2026-05-27 20:38+0000\n"
+"Last-Translator:  <EMAIL@ADDRESS>\n"
+"Language-Team: Persian <translation-team-fa@lists.sourceforge.net>\n"
+"Language: fa\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgid "Back"
+msgstr "برگشت"
+
+msgid "Congrats! You already have the latest version..."
+msgstr "تبریک میگم شما در حال حاضر آخرین نسخه را دارید ..."
+
+msgid "Convert"
+msgstr "تبدیل کنید"
+
+msgid "Do you want to install update ( %s ) now?"
+msgstr "آیا می خواهید به روز رسانی ( %s ) را اکنون نصب کنید؟"
+
+msgid "Exit"
+msgstr "خارج شوید"
+
+msgid "Loading data... Please wait"
+msgstr "در حال بارگیری داده ها... لطفاً صبر کنید"
+
+msgid "PARSA ALL TV"
+msgstr "در همه تلویزیون ظاهر شد"
+
+msgid "PARSA SPORT"
+msgstr "پارسا اسپورت"
+
+msgid "PARSA TV CATEGORY"
+msgstr "دسته بندی تلویزیون پارسا"
+
+msgid "Play"
+msgstr "بازی کنید"
+
+msgid "Please select ..."
+msgstr "لطفا انتخاب کنید..."
+
+msgid "Select"
+msgstr "انتخاب کنید"
+
+msgid "Update"
+msgstr "به روز رسانی"
+
+msgid "Update Aborted!"
+msgstr "به روز رسانی لغو شد!"
+
+msgid "bouquets reloaded.."
+msgstr "دسته گل ها دوباره بارگذاری شدند.."

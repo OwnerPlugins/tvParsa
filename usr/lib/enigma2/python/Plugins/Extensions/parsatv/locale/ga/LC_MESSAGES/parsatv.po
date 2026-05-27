@@ -1,0 +1,63 @@
+# parsatv translations
+# Copyright (C) 2025 Lululla Team
+# This file is distributed under the same license as the Lululla package.
+# [lululla] <ekekaz@gmail.com>, 2025.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: parsatv\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: 2026-05-27 20:38+0000\n"
+"Last-Translator:  <EMAIL@ADDRESS>\n"
+"Language-Team: Irish <gaeilge-gnulinux@lists.sourceforge.net>\n"
+"Language: ga\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=n==1 ? 0 : n==2 ? 1 : 2;\n"
+
+msgid "Back"
+msgstr "Ar ais"
+
+msgid "Congrats! You already have the latest version..."
+msgstr "Comhghairdeachas! Tá an leagan is déanaí agat cheana féin..."
+
+msgid "Convert"
+msgstr "Tiontaigh"
+
+msgid "Do you want to install update ( %s ) now?"
+msgstr "Ar mhaith leat nuashonrú ( % s ) a shuiteáil anois?"
+
+msgid "Exit"
+msgstr "Scoir"
+
+msgid "Loading data... Please wait"
+msgstr "Sonraí á lódáil... Fan go fóill"
+
+msgid "PARSA ALL TV"
+msgstr "BHÍ sé AR AN TEILIFÍS GACH"
+
+msgid "PARSA SPORT"
+msgstr "SPÓRT PARSA"
+
+msgid "PARSA TV CATEGORY"
+msgstr "CATAGÓIR teilifíse PARSA"
+
+msgid "Play"
+msgstr "Imirt"
+
+msgid "Please select ..."
+msgstr "Roghnaigh le do thoil ..."
+
+msgid "Select"
+msgstr "Roghnaigh"
+
+msgid "Update"
+msgstr "Nuashonrú"
+
+msgid "Update Aborted!"
+msgstr "Tobscoireadh an Nuashonrú!"
+
+msgid "bouquets reloaded.."
+msgstr "bouquets athluchtaithe. ."

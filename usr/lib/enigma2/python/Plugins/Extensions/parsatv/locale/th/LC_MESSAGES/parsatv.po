@@ -1,0 +1,62 @@
+# parsatv translations
+# Copyright (C) 2025 Lululla Team
+# This file is distributed under the same license as the Lululla package.
+# [lululla] <ekekaz@gmail.com>, 2025.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: parsatv\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: 2026-05-27 20:43+0000\n"
+"Last-Translator:  <EMAIL@ADDRESS>\n"
+"Language-Team: Thai <(nothing)>\n"
+"Language: th\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgid "Back"
+msgstr "กลับ"
+
+msgid "Congrats! You already have the latest version..."
+msgstr "ยินดีด้วย! คุณมีเวอร์ชันล่าสุดแล้ว..."
+
+msgid "Convert"
+msgstr "แปลง"
+
+msgid "Do you want to install update ( %s ) now?"
+msgstr "คุณต้องการติดตั้งการอัปเดต ( %s ) ตอนนี้หรือไม่?"
+
+msgid "Exit"
+msgstr "ออก"
+
+msgid "Loading data... Please wait"
+msgstr "กำลังโหลดข้อมูล... กรุณารอสักครู่"
+
+msgid "PARSA ALL TV"
+msgstr "มันปรากฏบนทีวีทุกเครื่อง"
+
+msgid "PARSA SPORT"
+msgstr "ปาร์ซ่า สปอร์ต"
+
+msgid "PARSA TV CATEGORY"
+msgstr "หมวดหมู่ทีวี PARSA"
+
+msgid "Play"
+msgstr "เล่น"
+
+msgid "Please select ..."
+msgstr "กรุณาเลือก..."
+
+msgid "Select"
+msgstr "เลือก"
+
+msgid "Update"
+msgstr "อัปเดต"
+
+msgid "Update Aborted!"
+msgstr "การอัปเดตถูกยกเลิก!"
+
+msgid "bouquets reloaded.."
+msgstr "โหลดช่อดอกไม้แล้ว.."

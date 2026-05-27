@@ -1,0 +1,62 @@
+# parsatv translations
+# Copyright (C) 2025 Lululla Team
+# This file is distributed under the same license as the Lululla package.
+# [lululla] <ekekaz@gmail.com>, 2025.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: parsatv\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: 2026-05-27 20:42+0000\n"
+"Last-Translator:  <EMAIL@ADDRESS>\n"
+"Language-Team: Tamil <tamil@systemreboot.net>\n"
+"Language: ta\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgid "Back"
+msgstr "மீண்டும்"
+
+msgid "Congrats! You already have the latest version..."
+msgstr "வாழ்த்துகள்! உங்களிடம் ஏற்கனவே சமீபத்திய பதிப்பு உள்ளது..."
+
+msgid "Convert"
+msgstr "மாற்றவும்"
+
+msgid "Do you want to install update ( %s ) now?"
+msgstr "புதுப்பிப்பை (%s) இப்போது நிறுவ விரும்புகிறீர்களா?"
+
+msgid "Exit"
+msgstr "வெளியேறு"
+
+msgid "Loading data... Please wait"
+msgstr "தரவை ஏற்றுகிறது... காத்திருக்கவும்"
+
+msgid "PARSA ALL TV"
+msgstr "இது எல்லா டிவியிலும் தோன்றியது"
+
+msgid "PARSA SPORT"
+msgstr "பார்சா விளையாட்டு"
+
+msgid "PARSA TV CATEGORY"
+msgstr "பார்சா டிவி வகை"
+
+msgid "Play"
+msgstr "விளையாடு"
+
+msgid "Please select ..."
+msgstr "தயவுசெய்து தேர்ந்தெடுக்கவும்..."
+
+msgid "Select"
+msgstr "தேர்ந்தெடு"
+
+msgid "Update"
+msgstr "புதுப்பிக்கவும்"
+
+msgid "Update Aborted!"
+msgstr "புதுப்பிப்பு நிறுத்தப்பட்டது!"
+
+msgid "bouquets reloaded.."
+msgstr "பூங்கொத்துகள் மீண்டும் ஏற்றப்பட்டன.."

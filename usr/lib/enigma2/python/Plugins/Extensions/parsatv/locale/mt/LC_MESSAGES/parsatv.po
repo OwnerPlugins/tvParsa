@@ -1,0 +1,62 @@
+# parsatv translations
+# Copyright (C) 2025 Lululla Team
+# This file is distributed under the same license as the Lululla package.
+# [lululla] <ekekaz@gmail.com>, 2025.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: parsatv\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: 2026-05-27 20:40+0000\n"
+"Last-Translator:  <EMAIL@ADDRESS>\n"
+"Language-Team: Maltese <translation-team-mt@lists.sourceforge.net>\n"
+"Language: mt\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgid "Back"
+msgstr "Lura"
+
+msgid "Congrats! You already have the latest version..."
+msgstr "Prosit! Diġà għandek l-aħħar verżjoni..."
+
+msgid "Convert"
+msgstr "Ikkonverti"
+
+msgid "Do you want to install update ( %s ) now?"
+msgstr "Trid tinstalla l-aġġornament ( %s ) issa?"
+
+msgid "Exit"
+msgstr "Ħruġ"
+
+msgid "Loading data... Please wait"
+msgstr "Tagħbija tad-dejta... Jekk jogħġbok stenna"
+
+msgid "PARSA ALL TV"
+msgstr "DEHERE FUQ IT-TV KOLLHA"
+
+msgid "PARSA SPORT"
+msgstr ""
+
+msgid "PARSA TV CATEGORY"
+msgstr "KATEGORIJA TAL-PARSA TV"
+
+msgid "Play"
+msgstr ""
+
+msgid "Please select ..."
+msgstr "Jekk jogħġbok agħżel..."
+
+msgid "Select"
+msgstr "Agħżel"
+
+msgid "Update"
+msgstr "Aġġornament"
+
+msgid "Update Aborted!"
+msgstr "Aġġornament Abortat!"
+
+msgid "bouquets reloaded.."
+msgstr "bukketti mgħobbija mill-ġdid.."

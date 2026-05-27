@@ -1,0 +1,62 @@
+# parsatv translations
+# Copyright (C) 2025 Lululla Team
+# This file is distributed under the same license as the Lululla package.
+# [lululla] <ekekaz@gmail.com>, 2025.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: parsatv\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: 2026-05-27 20:42+0000\n"
+"Last-Translator:  <EMAIL@ADDRESS>\n"
+"Language-Team: Tajik <rkovacs@khujand.org>\n"
+"Language: tg\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgid "Back"
+msgstr "Бозгашт"
+
+msgid "Congrats! You already have the latest version..."
+msgstr "Табрик! Шумо аллакай версияи охиринро доред..."
+
+msgid "Convert"
+msgstr "Табдил додан"
+
+msgid "Do you want to install update ( %s ) now?"
+msgstr "Оё шумо мехоҳед навсозиро ( %s ) ҳозир насб кунед?"
+
+msgid "Exit"
+msgstr "Баромадгоҳ"
+
+msgid "Loading data... Please wait"
+msgstr "Маълумот бор карда мешавад... Лутфан интизор шавед"
+
+msgid "PARSA ALL TV"
+msgstr "ИН ДАР ТАМОМИ ТЕЛЕВИЗОРОН ПАЙДО ШУД"
+
+msgid "PARSA SPORT"
+msgstr "ПАРСА СПОРТ"
+
+msgid "PARSA TV CATEGORY"
+msgstr "КАТЕГОРИЯИ ТВ PARSA"
+
+msgid "Play"
+msgstr "Бозӣ"
+
+msgid "Please select ..."
+msgstr "Лутфан интихоб кунед ..."
+
+msgid "Select"
+msgstr "Интихоб кунед"
+
+msgid "Update"
+msgstr "Навсозӣ"
+
+msgid "Update Aborted!"
+msgstr "Навсозӣ қатъ карда шуд!"
+
+msgid "bouquets reloaded.."
+msgstr "гулдастаҳо дубора бор карда шуданд.."

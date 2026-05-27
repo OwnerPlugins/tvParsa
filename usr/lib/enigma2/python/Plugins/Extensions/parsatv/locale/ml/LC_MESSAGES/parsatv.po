@@ -1,0 +1,62 @@
+# parsatv translations
+# Copyright (C) 2025 Lululla Team
+# This file is distributed under the same license as the Lululla package.
+# [lululla] <ekekaz@gmail.com>, 2025.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: parsatv\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: 2026-05-27 20:40+0000\n"
+"Last-Translator:  <EMAIL@ADDRESS>\n"
+"Language-Team: Malayalam <smc-discuss@googlegroups.com>\n"
+"Language: ml\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgid "Back"
+msgstr "തിരികെ"
+
+msgid "Congrats! You already have the latest version..."
+msgstr "അഭിനന്ദനങ്ങൾ! നിങ്ങൾക്ക് ഇതിനകം ഏറ്റവും പുതിയ പതിപ്പുണ്ട്..."
+
+msgid "Convert"
+msgstr "പരിവർത്തനം ചെയ്യുക"
+
+msgid "Do you want to install update ( %s ) now?"
+msgstr "നിങ്ങൾക്ക് ഇപ്പോൾ അപ്ഡേറ്റ് (%s ) ഇൻസ്റ്റാൾ ചെയ്യണോ?"
+
+msgid "Exit"
+msgstr "പുറത്ത്"
+
+msgid "Loading data... Please wait"
+msgstr "ഡാറ്റ ലോഡുചെയ്യുന്നു... ദയവായി കാത്തിരിക്കുക"
+
+msgid "PARSA ALL TV"
+msgstr "ഇത് എല്ലാ ടിവിയിലും പ്രത്യക്ഷപ്പെട്ടു"
+
+msgid "PARSA SPORT"
+msgstr "പാർസ സ്പോർട്ട്"
+
+msgid "PARSA TV CATEGORY"
+msgstr "പാർസ ടിവി വിഭാഗം"
+
+msgid "Play"
+msgstr "കളിക്കുക"
+
+msgid "Please select ..."
+msgstr "ദയവായി തിരഞ്ഞെടുക്കുക..."
+
+msgid "Select"
+msgstr "തിരഞ്ഞെടുക്കുക"
+
+msgid "Update"
+msgstr "അപ്ഡേറ്റ്"
+
+msgid "Update Aborted!"
+msgstr "അപ്‌ഡേറ്റ് നിർത്തലാക്കി!"
+
+msgid "bouquets reloaded.."
+msgstr "പൂച്ചെണ്ടുകൾ റീലോഡ് ചെയ്തു.."

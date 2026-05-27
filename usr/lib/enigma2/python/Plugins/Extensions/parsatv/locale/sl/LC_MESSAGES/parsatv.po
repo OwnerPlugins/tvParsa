@@ -1,0 +1,63 @@
+# parsatv translations
+# Copyright (C) 2025 Lululla Team
+# This file is distributed under the same license as the Lululla package.
+# [lululla] <ekekaz@gmail.com>, 2025.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: parsatv\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: 2026-05-27 20:42+0000\n"
+"Last-Translator:  <EMAIL@ADDRESS>\n"
+"Language-Team: Slovenian <translation-team-sl@lists.sourceforge.net>\n"
+"Language: sl\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=(n%100==1 ? 0 : n%100==2 ? 1 : n%100==3 || n%100==4 ? 2 : 3);\n"
+
+msgid "Back"
+msgstr "Nazaj"
+
+msgid "Congrats! You already have the latest version..."
+msgstr "čestitke Najnovejšo različico že imate..."
+
+msgid "Convert"
+msgstr "Pretvori"
+
+msgid "Do you want to install update ( %s ) now?"
+msgstr "Ali želite zdaj namestiti posodobitev ( %s )?"
+
+msgid "Exit"
+msgstr "Izhod"
+
+msgid "Loading data... Please wait"
+msgstr "Nalaganje podatkov ... Počakajte"
+
+msgid "PARSA ALL TV"
+msgstr "PRIKAZAL SE JE NA VSEH TV"
+
+msgid "PARSA SPORT"
+msgstr "PARSA ŠPORT"
+
+msgid "PARSA TV CATEGORY"
+msgstr "PARSA TV KATEGORIJA"
+
+msgid "Play"
+msgstr "Igraj"
+
+msgid "Please select ..."
+msgstr "Prosim izberite ..."
+
+msgid "Select"
+msgstr "Izberite"
+
+msgid "Update"
+msgstr "posodobitev"
+
+msgid "Update Aborted!"
+msgstr "Posodobitev prekinjena!"
+
+msgid "bouquets reloaded.."
+msgstr "šopki ponovno naloženi.."

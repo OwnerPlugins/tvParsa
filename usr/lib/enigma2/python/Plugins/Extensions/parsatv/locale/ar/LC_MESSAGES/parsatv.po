@@ -1,0 +1,62 @@
+# parsatv translations
+# Copyright (C) 2025 Lululla Team
+# This file is distributed under the same license as the Lululla package.
+# [lululla] <ekekaz@gmail.com>, 2025.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: parsatv\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: 2026-05-27 20:36+0000\n"
+"Last-Translator:  <EMAIL@ADDRESS>\n"
+"Language-Team: Arabic <(nothing)>\n"
+"Language: ar\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgid "Back"
+msgstr "خلف"
+
+msgid "Congrats! You already have the latest version..."
+msgstr "تهاني! لديك بالفعل الإصدار الأخير ..."
+
+msgid "Convert"
+msgstr "يتحول"
+
+msgid "Do you want to install update ( %s ) now?"
+msgstr "هل تريد تثبيت التحديث ( %s ) الآن؟"
+
+msgid "Exit"
+msgstr "مخرج"
+
+msgid "Loading data... Please wait"
+msgstr "جارٍ تحميل البيانات... الرجاء الانتظار"
+
+msgid "PARSA ALL TV"
+msgstr "ظهرت على جميع شاشات التلفاز"
+
+msgid "PARSA SPORT"
+msgstr "بارسا سبورت"
+
+msgid "PARSA TV CATEGORY"
+msgstr "فئة تلفزيون بارسا"
+
+msgid "Play"
+msgstr "يلعب"
+
+msgid "Please select ..."
+msgstr "الرجاء التحديد..."
+
+msgid "Select"
+msgstr "يختار"
+
+msgid "Update"
+msgstr "تحديث"
+
+msgid "Update Aborted!"
+msgstr "تم إحباط التحديث!"
+
+msgid "bouquets reloaded.."
+msgstr "تم إعادة تحميل الباقات .."

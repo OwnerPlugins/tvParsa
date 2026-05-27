@@ -1,0 +1,63 @@
+# parsatv translations
+# Copyright (C) 2025 Lululla Team
+# This file is distributed under the same license as the Lululla package.
+# [lululla] <ekekaz@gmail.com>, 2025.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: parsatv\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: 2026-05-27 20:36+0000\n"
+"Last-Translator:  <EMAIL@ADDRESS>\n"
+"Language-Team: Bulgarian <dict@ludost.net>\n"
+"Language: bg\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+msgid "Back"
+msgstr "Назад"
+
+msgid "Congrats! You already have the latest version..."
+msgstr "честито Вече имате най-новата версия..."
+
+msgid "Convert"
+msgstr "Преобразуване"
+
+msgid "Do you want to install update ( %s ) now?"
+msgstr "Искате ли да инсталирате актуализация ( %s ) сега?"
+
+msgid "Exit"
+msgstr "Изход"
+
+msgid "Loading data... Please wait"
+msgstr "Данните се зареждат... Моля, изчакайте"
+
+msgid "PARSA ALL TV"
+msgstr "ПОЯВИ СЕ ПО ВСИЧКИ ТЕЛЕВИЗИИ"
+
+msgid "PARSA SPORT"
+msgstr "ПАРСА СПОРТ"
+
+msgid "PARSA TV CATEGORY"
+msgstr "PARSA TV КАТЕГОРИЯ"
+
+msgid "Play"
+msgstr "Играйте"
+
+msgid "Please select ..."
+msgstr "Моля изберете..."
+
+msgid "Select"
+msgstr "Изберете"
+
+msgid "Update"
+msgstr "Актуализация"
+
+msgid "Update Aborted!"
+msgstr "Актуализацията е прекъсната!"
+
+msgid "bouquets reloaded.."
+msgstr "букети презаредени.."

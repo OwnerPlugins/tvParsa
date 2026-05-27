@@ -1,0 +1,63 @@
+# parsatv translations
+# Copyright (C) 2025 Lululla Team
+# This file is distributed under the same license as the Lululla package.
+# [lululla] <ekekaz@gmail.com>, 2025.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: parsatv\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: 2026-05-27 20:40+0000\n"
+"Last-Translator:  <EMAIL@ADDRESS>\n"
+"Language-Team: Korean <translation-team-ko@googlegroups.com>\n"
+"Language: ko\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+msgid "Back"
+msgstr "뒤쪽에"
+
+msgid "Congrats! You already have the latest version..."
+msgstr "축하해요! 이미 최신 버전이 있습니다..."
+
+msgid "Convert"
+msgstr "전환하다"
+
+msgid "Do you want to install update ( %s ) now?"
+msgstr "지금 업데이트( %s )를 설치하시겠습니까?"
+
+msgid "Exit"
+msgstr "출구"
+
+msgid "Loading data... Please wait"
+msgstr "데이터 로드 중... 잠시 기다려 주세요."
+
+msgid "PARSA ALL TV"
+msgstr "모든 TV에 나타났습니다"
+
+msgid "PARSA SPORT"
+msgstr "파사 스포츠"
+
+msgid "PARSA TV CATEGORY"
+msgstr "파사TV 카테고리"
+
+msgid "Play"
+msgstr "놀다"
+
+msgid "Please select ..."
+msgstr "선택하세요 ..."
+
+msgid "Select"
+msgstr "선택하다"
+
+msgid "Update"
+msgstr "업데이트"
+
+msgid "Update Aborted!"
+msgstr "업데이트가 중단되었습니다!"
+
+msgid "bouquets reloaded.."
+msgstr "꽃다발 리로드.."

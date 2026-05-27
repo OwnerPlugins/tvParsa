@@ -1,0 +1,63 @@
+# parsatv translations
+# Copyright (C) 2025 Lululla Team
+# This file is distributed under the same license as the Lululla package.
+# [lululla] <ekekaz@gmail.com>, 2025.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: parsatv\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: 2026-05-27 20:39+0000\n"
+"Last-Translator:  <EMAIL@ADDRESS>\n"
+"Language-Team: Hungarian <translation-team-hu@lists.sourceforge.net>\n"
+"Language: hu\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+msgid "Back"
+msgstr "Vissza"
+
+msgid "Congrats! You already have the latest version..."
+msgstr "Gratulálunk! Már megvan a legújabb verzió..."
+
+msgid "Convert"
+msgstr "Megtérít"
+
+msgid "Do you want to install update ( %s ) now?"
+msgstr "Szeretné most telepíteni a frissítést ( %s )?"
+
+msgid "Exit"
+msgstr "Kijárat"
+
+msgid "Loading data... Please wait"
+msgstr "Adatok betöltése... Kérjük, várjon"
+
+msgid "PARSA ALL TV"
+msgstr "AZ ÖSSZES TV-BEN MEGJELENT"
+
+msgid "PARSA SPORT"
+msgstr ""
+
+msgid "PARSA TV CATEGORY"
+msgstr "PARSA TV KATEGÓRIA"
+
+msgid "Play"
+msgstr "Játék"
+
+msgid "Please select ..."
+msgstr "Kérjük, válasszon..."
+
+msgid "Select"
+msgstr "Válassza ki"
+
+msgid "Update"
+msgstr "Frissítés"
+
+msgid "Update Aborted!"
+msgstr "Frissítés megszakítva!"
+
+msgid "bouquets reloaded.."
+msgstr "csokrok újratöltve.."

@@ -1,0 +1,63 @@
+# parsatv translations
+# Copyright (C) 2025 Lululla Team
+# This file is distributed under the same license as the Lululla package.
+# [lululla] <ekekaz@gmail.com>, 2025.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: parsatv\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: 2026-05-27 20:40+0000\n"
+"Last-Translator:  <EMAIL@ADDRESS>\n"
+"Language-Team: Lithuanian <komp_lt@konferencijos.lt>\n"
+"Language: lt\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+
+msgid "Back"
+msgstr "Atgal"
+
+msgid "Congrats! You already have the latest version..."
+msgstr "Sveikiname! Jau turite naujausią versiją..."
+
+msgid "Convert"
+msgstr "Konvertuoti"
+
+msgid "Do you want to install update ( %s ) now?"
+msgstr "Ar norite įdiegti naujinimą ( %s ) dabar?"
+
+msgid "Exit"
+msgstr "Išeiti"
+
+msgid "Loading data... Please wait"
+msgstr "Įkeliami duomenys... Palaukite"
+
+msgid "PARSA ALL TV"
+msgstr "TAI ATSIRODO PER VISUS TELEVIZORIUS"
+
+msgid "PARSA SPORT"
+msgstr ""
+
+msgid "PARSA TV CATEGORY"
+msgstr "PARSA TV KATEGORIJA"
+
+msgid "Play"
+msgstr "Žaisti"
+
+msgid "Please select ..."
+msgstr "Prašome pasirinkti..."
+
+msgid "Select"
+msgstr "Pasirinkite"
+
+msgid "Update"
+msgstr "Atnaujinti"
+
+msgid "Update Aborted!"
+msgstr "Atnaujinimas nutrauktas!"
+
+msgid "bouquets reloaded.."
+msgstr "puokštės perkrautos.."

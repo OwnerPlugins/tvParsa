@@ -1,0 +1,63 @@
+# parsatv translations
+# Copyright (C) 2025 Lululla Team
+# This file is distributed under the same license as the Lululla package.
+# [lululla] <ekekaz@gmail.com>, 2025.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: parsatv\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: 2026-05-27 20:37+0000\n"
+"Last-Translator:  <EMAIL@ADDRESS>\n"
+"Language-Team: Greek <team@lists.gnome.gr>\n"
+"Language: el\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+msgid "Back"
+msgstr "Πίσω"
+
+msgid "Congrats! You already have the latest version..."
+msgstr "Συγχαρητήρια! Έχετε ήδη την πιο πρόσφατη έκδοση..."
+
+msgid "Convert"
+msgstr "Μετατρέπω"
+
+msgid "Do you want to install update ( %s ) now?"
+msgstr "Θέλετε να εγκαταστήσετε την ενημέρωση ( %s ) τώρα;"
+
+msgid "Exit"
+msgstr "Εξοδος"
+
+msgid "Loading data... Please wait"
+msgstr "Φόρτωση δεδομένων... Περιμένετε"
+
+msgid "PARSA ALL TV"
+msgstr "ΕΜΦΑΝΙΣΤΗΚΕ ΣΕ ΟΛΗ ΤΗΝ ΤΗΛΕΟΡΑΣΗ"
+
+msgid "PARSA SPORT"
+msgstr ""
+
+msgid "PARSA TV CATEGORY"
+msgstr "ΚΑΤΗΓΟΡΙΑ ΤΗΛΕΟΡΑΣΗΣ ΠΑΡΣΑ"
+
+msgid "Play"
+msgstr "Παιχνίδι"
+
+msgid "Please select ..."
+msgstr "Επιλέξτε..."
+
+msgid "Select"
+msgstr "Επιλέγω"
+
+msgid "Update"
+msgstr "Εκσυγχρονίζω"
+
+msgid "Update Aborted!"
+msgstr "Η ενημέρωση ματαιώθηκε!"
+
+msgid "bouquets reloaded.."
+msgstr "μπουκέτα επαναφορτώθηκαν.."
