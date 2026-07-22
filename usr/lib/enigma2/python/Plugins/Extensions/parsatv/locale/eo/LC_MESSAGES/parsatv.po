@@ -39,7 +39,7 @@ msgid "PARSA ALL TV"
 msgstr "ĜI APERIS EN ĈIUJ TELEVIDO"
 
 msgid "PARSA SPORT"
-msgstr ""
+msgstr "PARSA SPORTO"
 
 msgid "PARSA TV CATEGORY"
 msgstr "PARSA TV KATEGORIO"
