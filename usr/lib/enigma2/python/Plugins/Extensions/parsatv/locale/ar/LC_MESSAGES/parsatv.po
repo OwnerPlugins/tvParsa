@@ -19,6 +19,13 @@ msgstr ""
 msgid "Back"
 msgstr "خلف"
 
+#, fuzzy
+msgid "Bouquets reloaded."
+msgstr "تم إعادة تحميل الباقات .."
+
+msgid "Category not found: %s"
+msgstr "لم يتم العثور على الفئة: %s"
+
 msgid "Congrats! You already have the latest version..."
 msgstr "تهاني! لديك بالفعل الإصدار الأخير ..."
 
@@ -28,11 +35,17 @@ msgstr "يتحول"
 msgid "Do you want to install update ( %s ) now?"
 msgstr "هل تريد تثبيت التحديث ( %s ) الآن؟"
 
+msgid "Error loading page"
+msgstr "خطأ في تحميل الصفحة"
+
 msgid "Exit"
 msgstr "مخرج"
 
 msgid "Loading data... Please wait"
 msgstr "جارٍ تحميل البيانات... الرجاء الانتظار"
+
+msgid "Network error - please retry"
+msgstr "خطأ في الشبكة - يرجى إعادة المحاولة"
 
 msgid "PARSA ALL TV"
 msgstr "ظهرت على جميع شاشات التلفاز"
@@ -43,6 +56,9 @@ msgstr "بارسا سبورت"
 msgid "PARSA TV CATEGORY"
 msgstr "فئة تلفزيون بارسا"
 
+msgid "Persian category not found"
+msgstr "لم يتم العثور على الفئة الفارسية"
+
 msgid "Play"
 msgstr "يلعب"
 
@@ -52,11 +68,11 @@ msgstr "الرجاء التحديد..."
 msgid "Select"
 msgstr "يختار"
 
+msgid "Sport category not found"
+msgstr "لم يتم العثور على فئة الرياضة"
+
 msgid "Update"
 msgstr "تحديث"
 
 msgid "Update Aborted!"
 msgstr "تم إحباط التحديث!"
-
-msgid "bouquets reloaded.."
-msgstr "تم إعادة تحميل الباقات .."

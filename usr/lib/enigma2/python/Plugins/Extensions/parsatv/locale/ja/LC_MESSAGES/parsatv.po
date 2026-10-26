@@ -20,6 +20,13 @@ msgstr ""
 msgid "Back"
 msgstr "戻る"
 
+#, fuzzy
+msgid "Bouquets reloaded."
+msgstr "花束がリロードされました。"
+
+msgid "Category not found: %s"
+msgstr "カテゴリが見つかりません: %s"
+
 msgid "Congrats! You already have the latest version..."
 msgstr "おめでとうございます！すでに最新バージョンをお持ちです..."
 
@@ -29,11 +36,17 @@ msgstr "変換する"
 msgid "Do you want to install update ( %s ) now?"
 msgstr "今すぐアップデート ( %s ) をインストールしますか?"
 
+msgid "Error loading page"
+msgstr "ページの読み込みエラー"
+
 msgid "Exit"
 msgstr "出口"
 
 msgid "Loading data... Please wait"
 msgstr "データをロードしています...お待ちください"
+
+msgid "Network error - please retry"
+msgstr "ネットワークエラー - 再試行してください"
 
 msgid "PARSA ALL TV"
 msgstr "すべてのテレビに登場しました"
@@ -44,6 +57,9 @@ msgstr "パルサスポーツ"
 msgid "PARSA TV CATEGORY"
 msgstr "PARSA TV カテゴリ"
 
+msgid "Persian category not found"
+msgstr "ペルシア語カテゴリが見つかりません"
+
 msgid "Play"
 msgstr "遊ぶ"
 
@@ -53,11 +69,11 @@ msgstr "選択してください..."
 msgid "Select"
 msgstr "選択"
 
+msgid "Sport category not found"
+msgstr "スポーツ カテゴリが見つかりません"
+
 msgid "Update"
 msgstr "アップデート"
 
 msgid "Update Aborted!"
 msgstr "アップデートが中止されました!"
-
-msgid "bouquets reloaded.."
-msgstr "花束がリロードされました。"

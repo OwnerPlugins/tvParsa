@@ -20,6 +20,13 @@ msgstr ""
 msgid "Back"
 msgstr "Z powrotem"
 
+#, fuzzy
+msgid "Bouquets reloaded."
+msgstr "bukiety załadowane ponownie.."
+
+msgid "Category not found: %s"
+msgstr "Nie znaleziono kategorii: %s"
+
 msgid "Congrats! You already have the latest version..."
 msgstr "Gratulacje! Masz już najnowszą wersję..."
 
@@ -29,11 +36,17 @@ msgstr "Konwertować"
 msgid "Do you want to install update ( %s ) now?"
 msgstr "Czy chcesz teraz zainstalować aktualizację ( %s )?"
 
+msgid "Error loading page"
+msgstr "Błąd ładowania strony"
+
 msgid "Exit"
 msgstr "Wyjście"
 
 msgid "Loading data... Please wait"
 msgstr "Ładowanie danych... Proszę czekać"
+
+msgid "Network error - please retry"
+msgstr "Błąd sieci — spróbuj ponownie"
 
 msgid "PARSA ALL TV"
 msgstr "POJAWIŁO SIĘ WE WSZYSTKICH TV"
@@ -44,6 +57,9 @@ msgstr ""
 msgid "PARSA TV CATEGORY"
 msgstr "KATEGORIA PARSA TV"
 
+msgid "Persian category not found"
+msgstr "Nie znaleziono kategorii perskiej"
+
 msgid "Play"
 msgstr "Grać"
 
@@ -53,11 +69,11 @@ msgstr "Proszę wybrać..."
 msgid "Select"
 msgstr "Wybierać"
 
+msgid "Sport category not found"
+msgstr "Nie znaleziono kategorii sportowej"
+
 msgid "Update"
 msgstr "Aktualizacja"
 
 msgid "Update Aborted!"
 msgstr "Aktualizacja przerwana!"
-
-msgid "bouquets reloaded.."
-msgstr "bukiety załadowane ponownie.."

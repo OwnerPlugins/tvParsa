@@ -20,6 +20,13 @@ msgstr ""
 msgid "Back"
 msgstr "Geri"
 
+#, fuzzy
+msgid "Bouquets reloaded."
+msgstr "buketler yeniden yüklendi.."
+
+msgid "Category not found: %s"
+msgstr "Kategori bulunamadı: %s"
+
 msgid "Congrats! You already have the latest version..."
 msgstr "Tebrikler! Zaten en son sürüme sahipsiniz..."
 
@@ -29,11 +36,17 @@ msgstr "Dönüştürmek"
 msgid "Do you want to install update ( %s ) now?"
 msgstr "Güncellemeyi ( %s ) şimdi yüklemek istiyor musunuz?"
 
+msgid "Error loading page"
+msgstr "Sayfa yüklenirken hata oluştu"
+
 msgid "Exit"
 msgstr "Çıkış"
 
 msgid "Loading data... Please wait"
 msgstr "Veri yükleniyor... Lütfen bekleyin"
+
+msgid "Network error - please retry"
+msgstr "Ağ hatası - lütfen tekrar deneyin"
 
 msgid "PARSA ALL TV"
 msgstr "TÜM TV'LERDE ÇIKTI"
@@ -44,6 +57,9 @@ msgstr "PARSA SPOR"
 msgid "PARSA TV CATEGORY"
 msgstr "PARSA TV KATEGORİSİ"
 
+msgid "Persian category not found"
+msgstr "Farsça kategori bulunamadı"
+
 msgid "Play"
 msgstr "Oynamak"
 
@@ -53,11 +69,11 @@ msgstr "Lütfen seçin..."
 msgid "Select"
 msgstr "Seçme"
 
+msgid "Sport category not found"
+msgstr "Spor kategorisi bulunamadı"
+
 msgid "Update"
 msgstr "Güncelleme"
 
 msgid "Update Aborted!"
 msgstr "Güncelleme İptal Edildi!"
-
-msgid "bouquets reloaded.."
-msgstr "buketler yeniden yüklendi.."

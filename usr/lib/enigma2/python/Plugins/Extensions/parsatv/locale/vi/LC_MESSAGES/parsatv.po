@@ -20,6 +20,13 @@ msgstr ""
 msgid "Back"
 msgstr "Mặt sau"
 
+#, fuzzy
+msgid "Bouquets reloaded."
+msgstr "bó hoa đã được tải lại.."
+
+msgid "Category not found: %s"
+msgstr "Không tìm thấy danh mục: %s"
+
 msgid "Congrats! You already have the latest version..."
 msgstr "Xin chúc mừng! Bạn đã có phiên bản mới nhất..."
 
@@ -29,11 +36,17 @@ msgstr "Chuyển thành"
 msgid "Do you want to install update ( %s ) now?"
 msgstr "Bạn có muốn cài đặt bản cập nhật ( %s ) ngay bây giờ không?"
 
+msgid "Error loading page"
+msgstr "Lỗi tải trang"
+
 msgid "Exit"
 msgstr "Ra"
 
 msgid "Loading data... Please wait"
 msgstr "Đang tải dữ liệu... Vui lòng đợi"
+
+msgid "Network error - please retry"
+msgstr "Lỗi mạng - vui lòng thử lại"
 
 msgid "PARSA ALL TV"
 msgstr "NÓ XUẤT HIỆN TRÊN TẤT CẢ TV"
@@ -44,6 +57,9 @@ msgstr "THỂ THAO PARSA"
 msgid "PARSA TV CATEGORY"
 msgstr "THỂ LOẠI TRUYỀN HÌNH PARSA"
 
+msgid "Persian category not found"
+msgstr "Không tìm thấy danh mục tiếng Ba Tư"
+
 msgid "Play"
 msgstr "Chơi"
 
@@ -53,11 +69,11 @@ msgstr "Hãy chọn..."
 msgid "Select"
 msgstr "Lựa chọn"
 
+msgid "Sport category not found"
+msgstr "Không tìm thấy danh mục thể thao"
+
 msgid "Update"
 msgstr "Cập nhật"
 
 msgid "Update Aborted!"
 msgstr "Cập nhật bị hủy bỏ!"
-
-msgid "bouquets reloaded.."
-msgstr "bó hoa đã được tải lại.."

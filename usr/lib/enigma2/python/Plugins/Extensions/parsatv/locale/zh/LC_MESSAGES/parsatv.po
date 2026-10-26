@@ -19,6 +19,13 @@ msgstr ""
 msgid "Back"
 msgstr "后退"
 
+#, fuzzy
+msgid "Bouquets reloaded."
+msgstr "花束已重新加载.."
+
+msgid "Category not found: %s"
+msgstr "未找到类别：%s"
+
 msgid "Congrats! You already have the latest version..."
 msgstr "恭喜！您已经拥有最新版本..."
 
@@ -28,11 +35,17 @@ msgstr "转变"
 msgid "Do you want to install update ( %s ) now?"
 msgstr "您想立即安装更新 (%s) 吗？"
 
+msgid "Error loading page"
+msgstr "加载页面时出错"
+
 msgid "Exit"
 msgstr "出口"
 
 msgid "Loading data... Please wait"
 msgstr "正在加载数据...请稍候"
+
+msgid "Network error - please retry"
+msgstr "网络错误 - 请重试"
 
 msgid "PARSA ALL TV"
 msgstr "它出现在所有电视上"
@@ -43,6 +56,9 @@ msgstr "帕莎体育"
 msgid "PARSA TV CATEGORY"
 msgstr "帕尔萨 电视类别"
 
+msgid "Persian category not found"
+msgstr "未找到波斯语类别"
+
 msgid "Play"
 msgstr "玩"
 
@@ -52,11 +68,11 @@ msgstr "请选择..."
 msgid "Select"
 msgstr "选择"
 
+msgid "Sport category not found"
+msgstr "未找到运动类别"
+
 msgid "Update"
 msgstr "更新"
 
 msgid "Update Aborted!"
 msgstr "更新中止！"
-
-msgid "bouquets reloaded.."
-msgstr "花束已重新加载.."

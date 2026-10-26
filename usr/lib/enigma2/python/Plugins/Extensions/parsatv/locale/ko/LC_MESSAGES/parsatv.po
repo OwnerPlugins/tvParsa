@@ -20,6 +20,13 @@ msgstr ""
 msgid "Back"
 msgstr "뒤쪽에"
 
+#, fuzzy
+msgid "Bouquets reloaded."
+msgstr "꽃다발 리로드.."
+
+msgid "Category not found: %s"
+msgstr "카테고리를 찾을 수 없습니다: %s"
+
 msgid "Congrats! You already have the latest version..."
 msgstr "축하해요! 이미 최신 버전이 있습니다..."
 
@@ -29,11 +36,17 @@ msgstr "전환하다"
 msgid "Do you want to install update ( %s ) now?"
 msgstr "지금 업데이트( %s )를 설치하시겠습니까?"
 
+msgid "Error loading page"
+msgstr "페이지를 로드하는 중에 오류가 발생했습니다."
+
 msgid "Exit"
 msgstr "출구"
 
 msgid "Loading data... Please wait"
 msgstr "데이터 로드 중... 잠시 기다려 주세요."
+
+msgid "Network error - please retry"
+msgstr "네트워크 오류 - 다시 시도해 주세요."
 
 msgid "PARSA ALL TV"
 msgstr "모든 TV에 나타났습니다"
@@ -44,6 +57,9 @@ msgstr "파사 스포츠"
 msgid "PARSA TV CATEGORY"
 msgstr "파사TV 카테고리"
 
+msgid "Persian category not found"
+msgstr "페르시아어 카테고리를 찾을 수 없습니다"
+
 msgid "Play"
 msgstr "놀다"
 
@@ -53,11 +69,11 @@ msgstr "선택하세요 ..."
 msgid "Select"
 msgstr "선택하다"
 
+msgid "Sport category not found"
+msgstr "스포츠 카테고리를 찾을 수 없습니다."
+
 msgid "Update"
 msgstr "업데이트"
 
 msgid "Update Aborted!"
 msgstr "업데이트가 중단되었습니다!"
-
-msgid "bouquets reloaded.."
-msgstr "꽃다발 리로드.."

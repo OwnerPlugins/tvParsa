@@ -7,6 +7,12 @@
 msgid "Back"
 msgstr ""
 
+msgid "Bouquets reloaded."
+msgstr ""
+
+msgid "Category not found: %s"
+msgstr ""
+
 msgid "Congrats! You already have the latest version..."
 msgstr ""
 
@@ -16,10 +22,16 @@ msgstr ""
 msgid "Do you want to install update ( %s ) now?"
 msgstr ""
 
+msgid "Error loading page"
+msgstr ""
+
 msgid "Exit"
 msgstr ""
 
 msgid "Loading data... Please wait"
+msgstr ""
+
+msgid "Network error - please retry"
 msgstr ""
 
 msgid "PARSA ALL TV"
@@ -31,6 +43,9 @@ msgstr ""
 msgid "PARSA TV CATEGORY"
 msgstr ""
 
+msgid "Persian category not found"
+msgstr ""
+
 msgid "Play"
 msgstr ""
 
@@ -40,11 +55,11 @@ msgstr ""
 msgid "Select"
 msgstr ""
 
+msgid "Sport category not found"
+msgstr ""
+
 msgid "Update"
 msgstr ""
 
 msgid "Update Aborted!"
-msgstr ""
-
-msgid "bouquets reloaded.."
 msgstr ""

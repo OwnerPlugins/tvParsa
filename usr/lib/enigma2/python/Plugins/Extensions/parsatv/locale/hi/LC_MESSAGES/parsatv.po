@@ -19,6 +19,13 @@ msgstr ""
 msgid "Back"
 msgstr "पीछे"
 
+#, fuzzy
+msgid "Bouquets reloaded."
+msgstr "गुलदस्ते पुनः लोड किए गए.."
+
+msgid "Category not found: %s"
+msgstr "श्रेणी नहीं मिली: %s"
+
 msgid "Congrats! You already have the latest version..."
 msgstr "बधाई! आपके पास पहले से ही नवीनतम संस्करण है..."
 
@@ -28,11 +35,17 @@ msgstr "बदलना"
 msgid "Do you want to install update ( %s ) now?"
 msgstr "क्या आप अभी अपडेट ( %s ) इंस्टॉल करना चाहते हैं?"
 
+msgid "Error loading page"
+msgstr "पेज लोड करने में त्रुटि"
+
 msgid "Exit"
 msgstr "बाहर निकलना"
 
 msgid "Loading data... Please wait"
 msgstr "डेटा लोड हो रहा है... कृपया प्रतीक्षा करें"
+
+msgid "Network error - please retry"
+msgstr "नेटवर्क त्रुटि - कृपया पुनः प्रयास करें"
 
 msgid "PARSA ALL TV"
 msgstr "यह सभी टीवी पर दिखाई दिया"
@@ -43,6 +56,9 @@ msgstr "परसा खेल"
 msgid "PARSA TV CATEGORY"
 msgstr "परसा टीवी श्रेणी"
 
+msgid "Persian category not found"
+msgstr "फ़ारसी श्रेणी नहीं मिली"
+
 msgid "Play"
 msgstr "खेल"
 
@@ -52,11 +68,11 @@ msgstr "कृपया चयन कीजिए ..."
 msgid "Select"
 msgstr "चुनना"
 
+msgid "Sport category not found"
+msgstr "खेल श्रेणी नहीं मिली"
+
 msgid "Update"
 msgstr "अद्यतन"
 
 msgid "Update Aborted!"
 msgstr "अद्यतन निरस्त किया गया!"
-
-msgid "bouquets reloaded.."
-msgstr "गुलदस्ते पुनः लोड किए गए.."

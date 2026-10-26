@@ -19,6 +19,13 @@ msgstr ""
 msgid "Back"
 msgstr "Kembali"
 
+#, fuzzy
+msgid "Bouquets reloaded."
+msgstr "karangan bunga diisi ulang.."
+
+msgid "Category not found: %s"
+msgstr "Kategori tidak ditemukan: %s"
+
 msgid "Congrats! You already have the latest version..."
 msgstr "Selamat! Anda sudah memiliki versi terbaru..."
 
@@ -28,11 +35,17 @@ msgstr "Mengubah"
 msgid "Do you want to install update ( %s ) now?"
 msgstr "Apakah Anda ingin menginstal pembaruan ( %s ) sekarang?"
 
+msgid "Error loading page"
+msgstr "Terjadi kesalahan saat memuat halaman"
+
 msgid "Exit"
 msgstr "KELUAR"
 
 msgid "Loading data... Please wait"
 msgstr "Memuat data... Harap tunggu"
+
+msgid "Network error - please retry"
+msgstr "Kesalahan jaringan - coba lagi"
 
 msgid "PARSA ALL TV"
 msgstr "ITU MUNCUL DI SEMUA TV"
@@ -43,6 +56,9 @@ msgstr "OLAHRAGA PARSA"
 msgid "PARSA TV CATEGORY"
 msgstr "KATEGORI TV PARSA"
 
+msgid "Persian category not found"
+msgstr "Kategori Persia tidak ditemukan"
+
 msgid "Play"
 msgstr "Bermain"
 
@@ -52,11 +68,11 @@ msgstr "Silakan pilih..."
 msgid "Select"
 msgstr "Memilih"
 
+msgid "Sport category not found"
+msgstr "Kategori olahraga tidak ditemukan"
+
 msgid "Update"
 msgstr "Memperbarui"
 
 msgid "Update Aborted!"
 msgstr "Pembaruan Dibatalkan!"
-
-msgid "bouquets reloaded.."
-msgstr "karangan bunga diisi ulang.."

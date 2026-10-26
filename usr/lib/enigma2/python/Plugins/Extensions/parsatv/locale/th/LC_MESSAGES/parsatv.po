@@ -19,6 +19,13 @@ msgstr ""
 msgid "Back"
 msgstr "กลับ"
 
+#, fuzzy
+msgid "Bouquets reloaded."
+msgstr "โหลดช่อดอกไม้แล้ว.."
+
+msgid "Category not found: %s"
+msgstr "ไม่พบหมวดหมู่: %s"
+
 msgid "Congrats! You already have the latest version..."
 msgstr "ยินดีด้วย! คุณมีเวอร์ชันล่าสุดแล้ว..."
 
@@ -28,11 +35,17 @@ msgstr "แปลง"
 msgid "Do you want to install update ( %s ) now?"
 msgstr "คุณต้องการติดตั้งการอัปเดต ( %s ) ตอนนี้หรือไม่?"
 
+msgid "Error loading page"
+msgstr "เกิดข้อผิดพลาดในการโหลดหน้า"
+
 msgid "Exit"
 msgstr "ออก"
 
 msgid "Loading data... Please wait"
 msgstr "กำลังโหลดข้อมูล... กรุณารอสักครู่"
+
+msgid "Network error - please retry"
+msgstr "ข้อผิดพลาดของเครือข่าย - โปรดลองอีกครั้ง"
 
 msgid "PARSA ALL TV"
 msgstr "มันปรากฏบนทีวีทุกเครื่อง"
@@ -43,6 +56,9 @@ msgstr "ปาร์ซ่า สปอร์ต"
 msgid "PARSA TV CATEGORY"
 msgstr "หมวดหมู่ทีวี PARSA"
 
+msgid "Persian category not found"
+msgstr "ไม่พบหมวดหมู่เปอร์เซีย"
+
 msgid "Play"
 msgstr "เล่น"
 
@@ -52,11 +68,11 @@ msgstr "กรุณาเลือก..."
 msgid "Select"
 msgstr "เลือก"
 
+msgid "Sport category not found"
+msgstr "ไม่พบหมวดกีฬา"
+
 msgid "Update"
 msgstr "อัปเดต"
 
 msgid "Update Aborted!"
 msgstr "การอัปเดตถูกยกเลิก!"
-
-msgid "bouquets reloaded.."
-msgstr "โหลดช่อดอกไม้แล้ว.."

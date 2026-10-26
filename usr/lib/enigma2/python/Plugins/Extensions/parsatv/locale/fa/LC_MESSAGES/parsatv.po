@@ -19,6 +19,13 @@ msgstr ""
 msgid "Back"
 msgstr "برگشت"
 
+#, fuzzy
+msgid "Bouquets reloaded."
+msgstr "دسته گل ها دوباره بارگذاری شدند.."
+
+msgid "Category not found: %s"
+msgstr "دسته پیدا نشد: %s"
+
 msgid "Congrats! You already have the latest version..."
 msgstr "تبریک میگم شما در حال حاضر آخرین نسخه را دارید ..."
 
@@ -28,11 +35,17 @@ msgstr "تبدیل کنید"
 msgid "Do you want to install update ( %s ) now?"
 msgstr "آیا می خواهید به روز رسانی ( %s ) را اکنون نصب کنید؟"
 
+msgid "Error loading page"
+msgstr "خطا در بارگیری صفحه"
+
 msgid "Exit"
 msgstr "خارج شوید"
 
 msgid "Loading data... Please wait"
 msgstr "در حال بارگیری داده ها... لطفاً صبر کنید"
+
+msgid "Network error - please retry"
+msgstr "خطای شبکه - لطفا دوباره امتحان کنید"
 
 msgid "PARSA ALL TV"
 msgstr "در همه تلویزیون ظاهر شد"
@@ -43,6 +56,9 @@ msgstr "پارسا اسپورت"
 msgid "PARSA TV CATEGORY"
 msgstr "دسته بندی تلویزیون پارسا"
 
+msgid "Persian category not found"
+msgstr "دسته فارسی یافت نشد"
+
 msgid "Play"
 msgstr "بازی کنید"
 
@@ -52,11 +68,11 @@ msgstr "لطفا انتخاب کنید..."
 msgid "Select"
 msgstr "انتخاب کنید"
 
+msgid "Sport category not found"
+msgstr "دسته ورزشی یافت نشد"
+
 msgid "Update"
 msgstr "به روز رسانی"
 
 msgid "Update Aborted!"
 msgstr "به روز رسانی لغو شد!"
-
-msgid "bouquets reloaded.."
-msgstr "دسته گل ها دوباره بارگذاری شدند.."
