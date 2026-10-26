@@ -662,7 +662,8 @@ class parsatv3(Screen):
             n2 = content.find("</button></a>", n1)
             if n1 == -1 or n2 == -1:
                 raise ValueError("Stream URL not found")
-            match = compile(r'<a href="(.+?)"><b', DOTALL).findall(content[n1:n2])
+            match = compile(r'<a href="(.+?)"><b',
+                            DOTALL).findall(content[n1:n2])
             if not match:
                 raise ValueError("No video link found")
             self.session.open(Playgo, name, match[-1])
@@ -813,7 +814,8 @@ class parsasport(Screen):
             n2 = content.find("</button></a>", n1)
             if n1 == -1 or n2 == -1:
                 raise ValueError("Stream URL not found")
-            match = compile(r'<a href="(.+?)"><b', DOTALL).findall(content[n1:n2])
+            match = compile(r'<a href="(.+?)"><b',
+                            DOTALL).findall(content[n1:n2])
             if not match:
                 raise ValueError("No video link found")
             self.session.open(Playgo, name, match[-1])
@@ -962,7 +964,8 @@ class parsatv(Screen):
             n2 = content.find("</button></a>", n1)
             if n1 == -1 or n2 == -1:
                 raise ValueError("Stream URL not found")
-            match = compile(r'<a href="(.+?)"><b', DOTALL).findall(content[n1:n2])
+            match = compile(r'<a href="(.+?)"><b',
+                            DOTALL).findall(content[n1:n2])
             if not match:
                 raise ValueError("No video link found")
             self.session.open(Playgo, name, match[-1])
@@ -997,7 +1000,8 @@ class TvInfoBarShowHide:
         self.__locked = 0
         self.hideTimer = eTimer()
         try:
-            self.hideTimer_conn = self.hideTimer.timeout.connect(self.doTimerHide)
+            self.hideTimer_conn = self.hideTimer.timeout.connect(
+                self.doTimerHide)
         except Exception:
             self.hideTimer.callback.append(self.doTimerHide)
         self.hideTimer.start(5000, True)
@@ -1102,28 +1106,38 @@ class Playgo(
         self.pcip = 'None'
         self.name = html_conv.html_unescape(name)
         self.state = self.STATE_PLAYING
-        for x in (InfoBarBase, InfoBarMenu, InfoBarSeek, InfoBarAudioSelection,
-                  InfoBarSubtitleSupport, InfoBarNotifications, TvInfoBarShowHide):
+        for x in (
+                InfoBarBase,
+                InfoBarMenu,
+                InfoBarSeek,
+                InfoBarAudioSelection,
+                InfoBarSubtitleSupport,
+                InfoBarNotifications,
+                TvInfoBarShowHide):
             x.__init__(self)
 
         SREF = self.session.nav.getCurrentlyPlayingServiceReference()
-        self["actions"] = ActionMap(
-            ["MoviePlayerActions", "MovieSelectionActions", "MediaPlayerActions",
-             "EPGSelectActions", "MediaPlayerSeekActions", "ColorActions",
-             "OkCancelActions", "InfobarShowHideActions", "InfobarActions",
-             "InfobarSeekActions"],
-            {
-                "leavePlayer": self.cancel,
-                "epg": self.showIMDB,
-                "info": self.showIMDB,
-                "tv": self.cicleStreamType,
-                "stop": self.leavePlayer,
-                "cancel": self.cancel,
-                "exit": self.leavePlayer,
-                "back": self.cancel,
-            },
-            -1,
-        )
+        self["actions"] = ActionMap(["MoviePlayerActions",
+                                     "MovieSelectionActions",
+                                     "MediaPlayerActions",
+                                     "EPGSelectActions",
+                                     "MediaPlayerSeekActions",
+                                     "ColorActions",
+                                     "OkCancelActions",
+                                     "InfobarShowHideActions",
+                                     "InfobarActions",
+                                     "InfobarSeekActions"],
+                                    {"leavePlayer": self.cancel,
+                                     "epg": self.showIMDB,
+                                     "info": self.showIMDB,
+                                     "tv": self.cicleStreamType,
+                                     "stop": self.leavePlayer,
+                                     "cancel": self.cancel,
+                                     "exit": self.leavePlayer,
+                                     "back": self.cancel,
+                                     },
+                                    -1,
+                                    )
 
         if '8088' in str(self.url):
             self.onFirstExecBegin.append(self.slinkPlay)
@@ -1238,7 +1252,8 @@ def make_m3u2(namex):
                 line = line.replace(' ', '%20')
 
                 if line.startswith('#EXTINF'):
-                    name = line.split(',', 1)[-1].replace('%20', ' ').rstrip('\n')
+                    name = line.split(
+                        ',', 1)[-1].replace('%20', ' ').rstrip('\n')
                     out.write('#EXTINF:-1,' + name + '\n')
 
                 elif line.startswith("http"):
@@ -1264,7 +1279,8 @@ def make_m3u2(namex):
 
                     if content2:
                         for url2 in compile(
-                                r'<a href="(.+?)"><b', DOTALL).findall(content2):
+                            r'<a href="(.+?)"><b',
+                                DOTALL).findall(content2):
                             if url2.startswith('http'):
                                 out.write(url2.replace(' ', '%20') + '\n')
 
