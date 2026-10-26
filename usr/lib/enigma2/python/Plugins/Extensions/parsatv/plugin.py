@@ -2,32 +2,27 @@
 # -*- coding: utf-8 -*-
 
 from __future__ import print_function
-import codecs
-from json import loads as json_loads
-from re import compile, DOTALL, sub
-from sys import version_info
-from datetime import datetime
-from os.path import exists, join, isfile
-from os import remove, stat, system as os_system
 
-from enigma import (
-    RT_VALIGN_CENTER,
-    RT_HALIGN_LEFT,
-    eListboxPythonMultiContent,
-    eServiceReference,
-    gFont,
-    getDesktop,
-    iPlayableService,
-    loadPNG,
-    eTimer
-)
+import codecs
+from datetime import datetime
+from functools import partial
+from json import loads as json_loads
+from os import remove, stat, system as os_system
+from os.path import exists, isfile, join
+from re import DOTALL, compile, sub
+from sys import version_info
+
+import six
 from Components.ActionMap import ActionMap
 from Components.Button import Button
-from Components.config import config
 from Components.Label import Label
 from Components.MenuList import MenuList
-from Components.MultiContent import MultiContentEntryPixmapAlphaTest, MultiContentEntryText
-from Components.ServiceEventTracker import ServiceEventTracker, InfoBarBase
+from Components.MultiContent import (
+    MultiContentEntryPixmapAlphaTest,
+    MultiContentEntryText,
+)
+from Components.ServiceEventTracker import InfoBarBase, ServiceEventTracker
+from Components.config import config
 from Plugins.Plugin import PluginDescriptor
 from Screens.InfoBarGenerics import (
     InfoBarAudioSelection,
@@ -39,11 +34,20 @@ from Screens.InfoBarGenerics import (
 from Screens.MessageBox import MessageBox
 from Screens.Screen import Screen
 from Tools.Directories import SCOPE_PLUGINS, resolveFilename
-import six
+from enigma import (
+    RT_HALIGN_LEFT,
+    RT_VALIGN_CENTER,
+    eListboxPythonMultiContent,
+    eServiceReference,
+    eTimer,
+    gFont,
+    getDesktop,
+    iPlayableService,
+    loadPNG,
+)
 
-from . import _, paypal, __version__
-from . import Utils
-from . import html_conv
+from . import _, __version__, paypal
+from . import Utils, html_conv
 from .Console import Console as xConsole
 
 '''
@@ -55,37 +59,37 @@ from .Console import Console as xConsole
 ****************************************
 '''
 
-global downloadparsa, path_skin, pngs
-
 downloadparsa = None
 _session = None
 
 PY3 = version_info.major >= 3
 if PY3:
-    from urllib.request import urlopen, Request
+    from urllib.request import Request, urlopen
     unicode = str
     unichr = chr
     long = int
 else:
-    from urllib2 import urlopen, Request
+    from urllib2 import Request, urlopen
 
 try:
     from Components.UsageConfig import defaultMoviePath
     downloadparsa = defaultMoviePath()
-except BaseException:
+except Exception:
     if exists("/usr/bin/apt-get"):
-        downloadparsa = ('/media/hdd/movie/')
+        downloadparsa = '/media/hdd/movie/'
+
 if not PY3:
     try:
         import ssl
         sslContext = ssl._create_unverified_context()
-    except BaseException:
+    except Exception:
         sslContext = None
+
 try:
     from twisted.internet import ssl
     from twisted.internet._sslverify import ClientTLSOptions
     sslverify = True
-except BaseException:
+except Exception:
     sslverify = False
 
 
@@ -104,12 +108,11 @@ if sslverify:
 def ssl_urlopen(url):
     if sslContext:
         return urlopen(url, context=sslContext)
-    else:
-        return urlopen(url)
+    return urlopen(url)
 
 
 title_plug = 'Parsa TV '
-desc_plugin = ('..:: Parsa TV by Lululla %s ::.. ' % __version__)
+desc_plugin = '..:: Parsa TV by Lululla {} ::.. '.format(__version__)
 plugin_path = resolveFilename(SCOPE_PLUGINS, "Extensions/{}".format('parsatv'))
 pluglogo = join(plugin_path, 'res/pics/logo.png')
 png = join(plugin_path, 'res/pics/tv.png')
@@ -134,7 +137,6 @@ Panel_Dlist = [
     ('PARSA TV CATEGORY'),
     ('PARSA SPORT')
 ]
-
 
 # filter list assign png
 EXTRAD = "radio", "radyo", "mix", "fm", "kbit", "rap", "metal", "alternative"
@@ -163,7 +165,7 @@ def returnpng(name):
     elif 'travel' in name.lower():
         png = join(plugin_path, 'res/pics/travel.png')
     elif 'relax' in name.lower():
-        png = join(plugin_path, 'res/pics/relax.pngparsatv')
+        png = join(plugin_path, 'res/pics/relax.png')
     elif 'xxx' in name.lower():
         png = join(plugin_path, 'res/pics/xxx.png')
     elif 'movie' in name.lower():
@@ -180,90 +182,47 @@ def returnpng(name):
 
 
 class OneSetList(MenuList):
-    def __init__(self, list):
-        MenuList.__init__(self, list, True, eListboxPythonMultiContent)
+    def __init__(self, items):
+        MenuList.__init__(self, items, True, eListboxPythonMultiContent)
         if screenwidth.width() == 2560:
             self.l.setItemHeight(60)
-            textfont = int(42)
-            self.l.setFont(0, gFont('Regular', textfont))
+            self.l.setFont(0, gFont('Regular', 42))
         elif screenwidth.width() == 1920:
             self.l.setItemHeight(50)
-            textfont = int(32)
-            self.l.setFont(0, gFont('Regular', textfont))
+            self.l.setFont(0, gFont('Regular', 32))
         else:
             self.l.setItemHeight(50)
-            textfont = int(24)
-            self.l.setFont(0, gFont('Regular', textfont))
+            self.l.setFont(0, gFont('Regular', 24))
 
 
 def OneSetListEntry(name, idx):
     res = [name]
     png = returnpng(name)
     if screenwidth.width() == 2560:
-        res.append(
-            MultiContentEntryPixmapAlphaTest(
-                pos=(
-                    5, 5), size=(
-                    50, 50), png=loadPNG(png)))
-        res.append(
-            MultiContentEntryText(
-                pos=(
-                    90,
-                    0),
-                size=(
-                    1200,
-                    50),
-                font=0,
-                text=name,
-                color=0xa6d1fe,
-                flags=RT_HALIGN_LEFT | RT_VALIGN_CENTER))
+        res.append(MultiContentEntryPixmapAlphaTest(
+            pos=(5, 5), size=(50, 50), png=loadPNG(png)))
+        res.append(MultiContentEntryText(
+            pos=(90, 0), size=(1200, 50), font=0, text=name,
+            color=0xa6d1fe, flags=RT_HALIGN_LEFT | RT_VALIGN_CENTER))
     elif screenwidth.width() == 1920:
-        res.append(
-            MultiContentEntryPixmapAlphaTest(
-                pos=(
-                    5, 7), size=(
-                    40, 40), png=loadPNG(png)))
-        res.append(
-            MultiContentEntryText(
-                pos=(
-                    70,
-                    0),
-                size=(
-                    1000,
-                    50),
-                font=0,
-                text=name,
-                color=0xa6d1fe,
-                flags=RT_HALIGN_LEFT | RT_VALIGN_CENTER))
+        res.append(MultiContentEntryPixmapAlphaTest(
+            pos=(5, 7), size=(40, 40), png=loadPNG(png)))
+        res.append(MultiContentEntryText(
+            pos=(70, 0), size=(1000, 50), font=0, text=name,
+            color=0xa6d1fe, flags=RT_HALIGN_LEFT | RT_VALIGN_CENTER))
     else:
-        res.append(
-            MultiContentEntryPixmapAlphaTest(
-                pos=(
-                    3, 10), size=(
-                    40, 40), png=loadPNG(png)))
-        res.append(
-            MultiContentEntryText(
-                pos=(
-                    50,
-                    0),
-                size=(
-                    500,
-                    50),
-                font=0,
-                text=name,
-                color=0xa6d1fe,
-                flags=RT_HALIGN_LEFT | RT_VALIGN_CENTER))
+        res.append(MultiContentEntryPixmapAlphaTest(
+            pos=(3, 10), size=(40, 40), png=loadPNG(png)))
+        res.append(MultiContentEntryText(
+            pos=(50, 0), size=(500, 50), font=0, text=name,
+            color=0xa6d1fe, flags=RT_HALIGN_LEFT | RT_VALIGN_CENTER))
     return res
 
 
-def showlistpars(data, list):
-    icount = 0
-    plist = []
-    for line in data:
-        name = data[icount]
-        plist.append(OneSetListEntry(name, icount))
-        icount += 1
-        list.setList(plist)
+def showlistpars(data, lst):
+    """Populate a MenuList with one row per entry in `data`."""
+    plist = [OneSetListEntry(name, idx) for idx, name in enumerate(data)]
+    lst.setList(plist)
 
 
 def returnIMDB(text_clear):
@@ -273,26 +232,30 @@ def returnIMDB(text_clear):
         try:
             _session.open(Utils.TMDB.tmdbScreen, text, 0)
         except Exception as e:
-            print("[XCF] TMDB error:", str(e))
+            print("[XCF] TMDB error:", e)
         return True
 
-    elif Utils.is_tmdb and Utils.tmdb:
+    if Utils.is_tmdb and Utils.tmdb:
         try:
             _session.open(Utils.tmdb.tmdbScreen, text, 0)
         except Exception as e:
-            print("[XCF] tmdb error:", str(e))
+            print("[XCF] tmdb error:", e)
         return True
 
-    elif Utils.is_imdb and Utils.imdb:
+    if Utils.is_imdb and Utils.imdb:
         try:
             Utils.imdb(_session, text)
         except Exception as e:
-            print("[XCF] IMDb error:", str(e))
+            print("[XCF] IMDb error:", e)
         return True
 
     _session.open(MessageBox, text, MessageBox.TYPE_INFO)
     return True
 
+
+# ---------------------------------------------------------------------------
+# Main screen
+# ---------------------------------------------------------------------------
 
 class MainParsa(Screen):
     def __init__(self, session):
@@ -302,7 +265,7 @@ class MainParsa(Screen):
         skin = join(path_skin, 'settings.xml')
         with codecs.open(skin, "r", encoding="utf-8") as f:
             self.skin = f.read()
-        self.setup_title = ('MainParsa')
+        self.setup_title = 'MainParsa'
         Screen.__init__(self, session)
         self.setTitle(title_plug)
         self['text'] = OneSetList([])
@@ -317,16 +280,13 @@ class MainParsa(Screen):
         self['key_blue'].hide()
         self["key_green"].hide()
         self.Update = False
+        self.new_version = '0.0'
+        self.new_changelog = ''
         self["actions"] = ActionMap(
-            [
-                "OkCancelActions",
-                "HotkeyActions",
-                "InfobarEPGActions",
-                "ChannelSelectBaseActions",
-                "DirectionActions"
-            ],
+            ["OkCancelActions", "HotkeyActions", "InfobarEPGActions",
+             "ChannelSelectBaseActions", "DirectionActions"],
             {
-                "yellow": self.update_me,               # update_me
+                "yellow": self.update_me,
                 "yellow_long": self.update_dev,
                 "info_long": self.update_dev,
                 "infolong": self.update_dev,
@@ -334,9 +294,9 @@ class MainParsa(Screen):
                 "ok": self.okRun,
                 "green": self.okRun,
                 "cancel": self.closerm,
-                "red": self.closerm
+                "red": self.closerm,
             },
-            -1
+            -1,
         )
 
         self.timer = eTimer()
@@ -351,102 +311,99 @@ class MainParsa(Screen):
     def check_vers(self):
         remote_version = '0.0'
         remote_changelog = ''
-        req = Request(
-            Utils.b64decoder(installer_url), headers={
-                'User-Agent': 'Mozilla/5.0'})
-        page = Utils.urlopen(req).read()
-        if PY3:
-            data = page.decode("utf-8")
-        else:
-            data = page.encode("utf-8")
-        if data:
-            lines = data.split("\n")
-            for line in lines:
-                if line.startswith("version"):
-                    remote_version = line.split("=")
-                    remote_version = line.split("'")[1]
-                if line.startswith("changelog"):
-                    remote_changelog = line.split("=")
-                    remote_changelog = line.split("'")[1]
-                    break
+        try:
+            req = Request(Utils.b64decoder(installer_url),
+                          headers={'User-Agent': 'Mozilla/5.0'})
+            page = Utils.urlopen(req, timeout=10).read()
+            if not page:
+                return
+            data = page.decode("utf-8") if PY3 else page
+            if data:
+                for line in data.split("\n"):
+                    if line.startswith("version"):
+                        remote_version = line.split("'")[1]
+                    if line.startswith("changelog"):
+                        remote_changelog = line.split("'")[1]
+                        break
+        except Exception as e:
+            print("[ParsaTV] check_vers error:", e)
+            return
+
         self.new_version = remote_version
         self.new_changelog = remote_changelog
-        if __version__ < remote_version:
-            self.Update = True
-            self['key_yellow'].show()
-            # self['key_green'].show()
-            self.session.open(
-                MessageBox, _(
-                    "New version %s is available\n\n"
-                    "Changelog: %s\n\n"
-                    "Press info_long or yellow_long button to start force updating.") %
-                (self.new_version, self.new_changelog), MessageBox.TYPE_INFO, timeout=5)
-        # self.update_me()
+
+        def _ver(t):
+            try:
+                return tuple(int(x) for x in t.split('.'))
+            except (ValueError, AttributeError):
+                return (0,)
+
+        try:
+            if _ver(__version__) < _ver(remote_version):
+                self.Update = True
+                self['key_yellow'].show()
+                self.session.open(
+                    MessageBox,
+                    _("New version %s is available\n\n"
+                      "Changelog: %s\n\n"
+                      "Press info_long or yellow_long to force update.")
+                    % (self.new_version, self.new_changelog),
+                    MessageBox.TYPE_INFO, timeout=5)
+        except Exception as e:
+            print("[ParsaTV] version compare error:", e)
 
     def update_me(self):
-        if self.Update is True:
+        if self.Update:
             self.session.openWithCallback(
-                self.install_update,
-                MessageBox,
-                _(
-                    "New version %s is available.\n\n"
-                    "Changelog: %s\n\n"
-                    "Do you want to install it now?"
-                ) % (self.new_version, self.new_changelog),
-                MessageBox.TYPE_YESNO
-            )
+                self.install_update, MessageBox,
+                _("New version %s is available.\n\n"
+                  "Changelog: %s\n\n"
+                  "Do you want to install it now?")
+                % (self.new_version, self.new_changelog),
+                MessageBox.TYPE_YESNO)
         else:
             self.session.open(
                 MessageBox,
                 _("Congrats! You already have the latest version..."),
-                MessageBox.TYPE_INFO,
-                timeout=4
-            )
+                MessageBox.TYPE_INFO, timeout=4)
 
     def update_dev(self):
         try:
-            req = Request(
-                Utils.b64decoder(developer_url), headers={
-                    'User-Agent': 'Mozilla/5.0'})
-            page = Utils.urlopen(req).read()
+            req = Request(Utils.b64decoder(developer_url),
+                          headers={'User-Agent': 'Mozilla/5.0'})
+            page = Utils.urlopen(req, timeout=10).read()
+            if not page:
+                return
             data = json_loads(page)
             remote_date = data['pushed_at']
-            strp_remote_date = datetime.strptime(
-                remote_date, '%Y-%m-%dT%H:%M:%SZ')
-            remote_date = strp_remote_date.strftime('%Y-%m-%d')
+            strp = datetime.strptime(remote_date, '%Y-%m-%dT%H:%M:%SZ')
+            remote_date = strp.strftime('%Y-%m-%d')
             self.session.openWithCallback(
-                self.install_update,
-                MessageBox,
-                _("Do you want to install update ( %s ) now?") %
-                (remote_date),
+                self.install_update, MessageBox,
+                _("Do you want to install update ( %s ) now?") % remote_date,
                 MessageBox.TYPE_YESNO)
         except Exception as e:
-            print('error xcons:', e)
+            print('update_dev error:', e)
 
     def install_update(self, answer=False):
         if answer:
-            cmd1 = 'wget -q "--no-check-certificate" ' + \
-                Utils.b64decoder(installer_url) + ' -O - | /bin/sh'
+            cmd1 = ('wget -q "--no-check-certificate" '
+                    + Utils.b64decoder(installer_url) + ' -O - | /bin/sh')
             self.session.open(
-                xConsole,
-                'Upgrading...',
+                xConsole, 'Upgrading...',
                 cmdlist=[cmd1],
                 finishedCallback=self.myCallback,
                 closeOnSuccess=False)
         else:
             self.session.open(
-                MessageBox,
-                _("Update Aborted!"),
-                MessageBox.TYPE_INFO,
-                timeout=3)
+                MessageBox, _("Update Aborted!"),
+                MessageBox.TYPE_INFO, timeout=3)
 
     def myCallback(self, result=None):
-        print('result:', result)
-        return
+        print('install_update result:', result)
 
     def layoutFinished(self):
-        payp = paypal()
-        self["paypal"].setText(payp)
+        self["paypal"].setText(paypal())
         self.setTitle(self.setup_title)
 
     def closerm(self):
@@ -454,16 +411,9 @@ class MainParsa(Screen):
         self.close()
 
     def updateMenuList(self):
-        self.menu_list = []
-        for x in self.menu_list:
-            del self.menu_list[0]
-        list = []
-        idx = 0
-        for x in Panel_Dlist:
-            list.append(OneSetListEntry(x, idx))
-            self.menu_list.append(x)
-            idx += 1
-        self['text'].setList(list)
+        self.menu_list = list(Panel_Dlist)
+        items = [OneSetListEntry(x, idx) for idx, x in enumerate(Panel_Dlist)]
+        self['text'].setList(items)
         self["key_green"].show()
         self['info'].setText(_('Please select ...'))
 
@@ -478,11 +428,15 @@ class MainParsa(Screen):
             self.session.open(parsatv)
         elif sel == _('PARSA TV CATEGORY'):
             self.session.open(parsatv2)
-        else:
-            return
 
+
+# ---------------------------------------------------------------------------
+# Category list
+# ---------------------------------------------------------------------------
 
 class parsatv2(Screen):
+    """Shows the list of categories."""
+
     def __init__(self, session):
         self.session = session
         global _session
@@ -490,10 +444,9 @@ class parsatv2(Screen):
         skin = join(path_skin, 'settings.xml')
         with codecs.open(skin, "r", encoding="utf-8") as f:
             self.skin = f.read()
-        self.setup_title = ('ParsaTV')
+        self.setup_title = 'ParsaTV'
         Screen.__init__(self, session)
         self.setTitle(title_plug)
-        self.list = []
         self.name = 'Parsa Category'
         self.url = 'https://www.parsatv.com/m/'
         self['title'] = Label(title_plug)
@@ -513,82 +466,66 @@ class parsatv2(Screen):
             self.timer.callback.append(self._gotPageLoad)
         self.timer.start(1500, True)
         self["actions"] = ActionMap(
-            [
-                "OkCancelActions",
-                "ColorActions",
-                "ButtonSetupActions",
-                "DirectionActions"
-            ],
+            ["OkCancelActions", "ColorActions", "ButtonSetupActions",
+             "DirectionActions"],
             {
                 "ok": self.okRun,
                 "green": self.okRun,
                 "red": self.close,
-                # "yellow": self.convert,
-                "cancel": self.close
+                "cancel": self.close,
             },
-            -2
+            -2,
         )
-
         self.onLayoutFinish.append(self.layoutFinished)
 
     def layoutFinished(self):
-        payp = paypal()
-        self["paypal"].setText(payp)
+        self["paypal"].setText(paypal())
         self.setTitle(self.setup_title)
 
     def _gotPageLoad(self):
-        url = self.url
-        name = self.name
+        base_url = self.url
         self.names = []
         self.urls = []
-        items = []
         try:
-            content = Utils.ReadUrl2(url, referer)
-            if six.PY3:
+            content = Utils.ReadUrl2(base_url, referer)
+            if not content:
+                self['info'].setText(_('Network error - please retry'))
+                return
+            if not six.PY2:
                 content = six.ensure_str(content)
 
-            n6 = content.find("<a></a></td>")
-            if str(n6) in content:
-                content = content.replace("<a></a></td>", "<a></a></li></td>")
-                print("yes is n6")
-            else:
-                print("no, no n6 in parsatv2!")
+            match = compile(
+                r'<tr>.*?<td id=".*?><li>(.+?)<a>.*?</td>.*?</tr>',
+                DOTALL).findall(content)
 
-            regexvideo = '<tr>.*?<td id=".*?><li>(.+?)<a>.*?</td>.*?</tr>'
-            match = compile(regexvideo, DOTALL).findall(content)
-            for name in match:
-                url = url.replace(' ', '%20')
-                item = name + "###" + url + '\n'
-                items.append(item)
-
-            items.sort()
+            items = sorted(name + "###" + base_url + '\n' for name in match)
             for item in items:
-                name = item.split("###")[0]
-                url = item.split("###")[1]
-                self.names.append(name)
-                self.urls.append(url)
+                self.names.append(item.split("###")[0])
+                self.urls.append(item.split("###")[1])
 
             self['info'].setText(_('Please select ...'))
             self["key_green"].show()
             showlistpars(self.names, self['text'])
         except Exception as e:
-            print("error parsatv2", str(e))
+            print("[parsatv2] _gotPageLoad error:", e)
+            self['info'].setText(_('Error loading page'))
 
     def okRun(self):
         if not self.names:
             return
-
         idx = self["text"].getSelectionIndex()
-
         if idx < 0 or idx >= len(self.names):
             return
+        self.session.open(parsatv3, self.names[idx], self.urls[idx])
 
-        name = self.names[idx]
-        url = self.urls[idx]
-        self.session.open(parsatv3, name, url)
 
+# ---------------------------------------------------------------------------
+# Single category
+# ---------------------------------------------------------------------------
 
 class parsatv3(Screen):
+    """Shows the channels of a single category."""
+
     def __init__(self, session, name, url):
         self.session = session
         global _session
@@ -596,10 +533,9 @@ class parsatv3(Screen):
         skin = join(path_skin, 'settings.xml')
         with codecs.open(skin, "r", encoding="utf-8") as f:
             self.skin = f.read()
-        self.setup_title = ('Parsa Category')
+        self.setup_title = 'Parsa Category'
         Screen.__init__(self, session)
         self.setTitle(title_plug)
-        self.list = []
         self.name = name
         self.url = url
         self['title'] = Label(title_plug)
@@ -620,154 +556,139 @@ class parsatv3(Screen):
             self.timer.callback.append(self._gotPageLoad)
         self.timer.start(1500, True)
         self["actions"] = ActionMap(
-            [
-                "OkCancelActions",
-                "ColorActions",
-                "ButtonSetupActions",
-                "DirectionActions"
-            ],
+            ["OkCancelActions", "ColorActions", "ButtonSetupActions",
+             "DirectionActions"],
             {
                 "ok": self.okRun,
                 "green": self.okRun,
                 "red": self.close,
                 "yellow": self.convert,
-                "cancel": self.close
+                "cancel": self.close,
             },
-            -2
+            -2,
         )
-
         self.onLayoutFinish.append(self.layoutFinished)
 
     def layoutFinished(self):
-        payp = paypal()
-        self["paypal"].setText(payp)
+        self["paypal"].setText(paypal())
         self.setTitle(self.setup_title)
 
     def convert(self, answer=None):
         if answer is None:
             self.session.openWithCallback(
-                self.convert,
-                MessageBox,
-                _(
-                    "Do you want to Convert %s to favorite .tv?\n\n"
-                    "Attention!! It may take some time depending\n"
-                    "on the number of streams contained!!!"
-                )
-            )
+                self.convert, MessageBox,
+                _("Do you want to convert %s to a favorite .tv bouquet?\n\n"
+                  "Warning: this may take a while depending on the\n"
+                  "number of streams contained!") % self.name)
         elif answer:
-            namex = self.name.lower()
-            namex = namex.replace(' ', '-').strip()
+            namex = self.name.lower().replace(' ', '-').strip()
             if Utils.DreamOS():
                 from Tools.BoundFunction import boundFunction
                 self.timer_conn = self.timer.timeout.connect(
                     boundFunction(make_m3u2, namex))
             else:
-                self.timer.callback.append(make_m3u2(namex))
+                self.timer.callback.append(partial(make_m3u2, namex))
             self.timer.start(500, True)
 
     def _gotPageLoad(self):
         self.names = []
         self.urls = []
         items = []
-
         url = self.url
         name = self.name
         namex = name.lower().replace(" ", "-").strip()
 
-        if exists(downloadparsa):
-            xxxname = downloadparsa + namex + "_conv.m3u"
-        else:
-            xxxname = "/tmp/" + namex + "_conv.m3u"
+        xxxname = (downloadparsa + namex + "_conv.m3u"
+                   if exists(downloadparsa) else "/tmp/" + namex + "_conv.m3u")
 
         try:
-            with open(xxxname, "w") as e:
-                e.write("#EXTM3U\n")
+            content = Utils.ReadUrl2(url, referer)
+            if not content:
+                self['info'].setText(_('Network error - please retry'))
+                return
+            if not six.PY2:
+                content = six.ensure_str(content)
 
-                content = Utils.ReadUrl2("https://www.parsatv.com/m/", referer)
-                if six.PY3:
-                    content = six.ensure_str(content)
+            anchor = name + "<a></a>"
+            n1 = content.find(anchor)
+            if n1 == -1:
+                self['info'].setText(_('Category not found: %s') % name)
+                return
+            n2 = content.find("<td id=", n1 + len(anchor))
+            content2 = content[n1:] if n2 == -1 else content[n1:n2]
 
-                if "<a></a></td>" in content:
-                    content = content.replace(
-                        "<a></a></td>", "<a></a></li></td>")
-                    print("yes is n6")
-                else:
-                    print("no, not n6 in content!")
+            match = compile(
+                r'<li><a href="(.+?)#.*?"><button.*?myButton">(.+?)</button',
+                DOTALL).findall(content2)
 
-                s1 = name + "<a></a>"
-                n1 = content.find(s1)
-                n2 = content.find("<td id=", n1)
-                content2 = content[n1:n2]
-
-                regexvideo = '<li><a href="(.+?)#.*?"><button.*?myButton">(.+?)</button'
-                match = compile(regexvideo, DOTALL).findall(content2)
-
-                for url, name in match:
-                    if url.startswith("http"):
-                        url = url.replace(" ", "%20")
-                        name1 = name.replace("%20", " ")
-                        item = name1 + "###" + url + "\n"
-                        items.append(item)
-
-                        # Write m3u
-                        e.write("#EXTINF:-1," + name1 + "\n")
-                        e.write(url + "\n")
+            with open(xxxname, "w") as fh:
+                fh.write("#EXTM3U\n")
+                for u, n in match:
+                    if u.startswith("http"):
+                        u = u.replace(" ", "%20")
+                        n_clean = n.replace("%20", " ")
+                        items.append(n_clean + "###" + u + "\n")
+                        fh.write("#EXTINF:-1," + n_clean + "\n")
+                        fh.write(u + "\n")
 
             items.sort()
             for item in items:
-                name = item.split("###")[0]
-                url = item.split("###")[1]
-                self.names.append(name)
-                self.urls.append(url)
+                self.names.append(item.split("###")[0])
+                self.urls.append(item.split("###")[1])
 
             self["info"].setText(_("Please select ..."))
             self["key_green"].show()
             self["key_yellow"].show()
             showlistpars(self.names, self["text"])
-
-            print("-------------parsatv-------------")
+            print("-------------parsatv3-------------")
         except Exception as e:
-            print("error", str(e))
+            print("[parsatv3] _gotPageLoad error:", e)
+            self['info'].setText(_('Error loading page'))
 
     def okRun(self):
-        i = len(self.names)
-        if i < 1:
+        if not self.names:
             return
-
         idx = self["text"].getSelectionIndex()
-        name = self.names[idx]
-        url = self.urls[idx]
+        if idx < 0 or idx >= len(self.names):
+            return
+        name, url = self.names[idx], self.urls[idx]
+        try:
+            content = Utils.ReadUrl2(url, referer)
+            if not content:
+                raise ValueError("Empty response")
+            if not six.PY2:
+                content = six.ensure_str(content)
+            n1 = content.find('class="myButton" id=', 0)
+            n2 = content.find("</button></a>", n1)
+            if n1 == -1 or n2 == -1:
+                raise ValueError("Stream URL not found")
+            match = compile(r'<a href="(.+?)"><b', DOTALL).findall(content[n1:n2])
+            if not match:
+                raise ValueError("No video link found")
+            self.session.open(Playgo, name, match[-1])
+        except Exception as e:
+            print("[parsatv3] okRun error:", e)
+            self.session.open(
+                MessageBox, _("Unable to extract stream:\n%s") % e,
+                MessageBox.TYPE_ERROR, timeout=5)
 
-        content = Utils.ReadUrl2(url, referer)
-        if six.PY3:
-            content = six.ensure_str(content)
 
-        n1 = content.find('class="myButton" id=', 0)
-        n2 = content.find("</button></a>", n1)
-        content = content[n1:n2]
-
-        regexvideo = '<a href="(.+?)"><b'
-        match = compile(regexvideo, DOTALL).findall(content)
-
-        for url in match:
-            pass  # last url remains (if multiple links)
-
-        self.session.open(Playgo, name, url)
-
+# ---------------------------------------------------------------------------
+# Sport
+# ---------------------------------------------------------------------------
 
 class parsasport(Screen):
+    """Scrapes channels from the 'Sport' category."""
+
     def __init__(self, session):
         self.session = session
         skin = join(path_skin, 'settings.xml')
         with codecs.open(skin, "r", encoding="utf-8") as f:
             self.skin = f.read()
-        self.setup_title = ('Parsa Sport')
+        self.setup_title = 'Parsa Sport'
         Screen.__init__(self, session)
         self.setTitle(title_plug)
-        self.list = []
         self.name = 'ParsaSport'
-        self.url2 = 'http://www.parsatv.com/streams/fetch/varzeshtv.php'
-        self.url3 = 'http://www.parsatv.com/m/name=Varzesh-3'
         self.url = 'http://www.parsatv.com/m/'
         self['text'] = OneSetList([])
         self['info'] = Label(_('Loading data... Please wait'))
@@ -787,143 +708,137 @@ class parsasport(Screen):
         self.timer.start(1500, True)
         self['title'] = Label(title_plug)
         self["actions"] = ActionMap(
-            [
-                "OkCancelActions",
-                "ColorActions",
-                "ButtonSetupActions",
-                "DirectionActions"
-            ],
+            ["OkCancelActions", "ColorActions", "ButtonSetupActions",
+             "DirectionActions"],
             {
                 "ok": self.okRun,
                 "green": self.okRun,
                 "red": self.close,
                 "yellow": self.convert,
-                "cancel": self.close
+                "cancel": self.close,
             },
-            -2
+            -2,
         )
-
         self.onLayoutFinish.append(self.layoutFinished)
 
     def layoutFinished(self):
-        payp = paypal()
-        self["paypal"].setText(payp)
+        self["paypal"].setText(paypal())
         self.setTitle(self.setup_title)
 
     def convert(self, answer=None):
         if answer is None:
             self.session.openWithCallback(
-                self.convert,
-                MessageBox,
-                _(
-                    "Do you want to Convert to favorite .tv?\n\n"
-                    "Attention!! It may take some time depending\n"
-                    "on the number of streams contained!!!"
-                )
-            )
+                self.convert, MessageBox,
+                _("Do you want to convert to a favorite .tv bouquet?\n\n"
+                  "Warning: this may take a while depending on the\n"
+                  "number of streams contained!"))
         elif answer:
-            namex = self.name.lower()
-            namex = namex.replace(' ', '-').strip()
+            namex = self.name.lower().replace(' ', '-').strip()
             if Utils.DreamOS():
                 from Tools.BoundFunction import boundFunction
                 self.timer_conn = self.timer.timeout.connect(
                     boundFunction(make_m3u2, namex))
             else:
-                self.timer.callback.append(make_m3u2(namex))
+                self.timer.callback.append(partial(make_m3u2, namex))
             self.timer.start(500, True)
 
     def _gotPageLoad(self):
         self.names = []
         self.urls = []
         items = []
-
         url = self.url
         namex = self.name.lower().replace(' ', '-').strip()
 
-        if exists(downloadparsa):
-            xxxname = downloadparsa + namex + '_conv.m3u'
-        else:
-            xxxname = '/tmp/' + namex + '_conv.m3u'
+        xxxname = (downloadparsa + namex + '_conv.m3u'
+                   if exists(downloadparsa) else '/tmp/' + namex + '_conv.m3u')
 
         try:
             content = Utils.ReadUrl2(url, referer)
-            if six.PY3:
+            if not content:
+                self['info'].setText(_('Network error - please retry'))
+                return
+            if not six.PY2:
                 content = six.ensure_str(content)
 
-            n1 = content.find('<td id="persian">', 0)
-            n2 = content.find("</ul></td>", n1)
-            content = content[n1:n2]
+            start_marker = '<td id="sport">'
+            n1 = content.find(start_marker)
+            if n1 == -1:
+                self['info'].setText(_('Sport category not found'))
+                return
+            n2 = content.find('<td id="', n1 + len(start_marker))
+            content2 = content[n1:] if n2 == -1 else content[n1:n2]
 
-            regexvideo = '<li><a href="(.+?)#.*?"><button.*?myButton">(.+?)</button'
-            match = compile(regexvideo, DOTALL).findall(content)
+            match = compile(
+                r'<li><a href="(.+?)#.*?"><button.*?myButton">(.+?)</button',
+                DOTALL).findall(content2)
 
-            with open(xxxname, 'w') as e:
-                e.write("#EXTM3U\n")
-                for url, name in match:
-                    if url.startswith('http') and 'sport' in url.lower():
-                        url = url.replace(' ', '%20')
-                        name1 = name.replace('%20', ' ')
-                        item = name1 + "###" + url + '\n'
-                        items.append(item)
-                        # Write to m3u
-                        e.write('#EXTINF:-1,' + name1 + '\n')
-                        e.write(url + '\n')
+            with open(xxxname, 'w') as fh:
+                fh.write("#EXTM3U\n")
+                for u, n in match:
+                    if u.startswith('http'):
+                        u = u.replace(' ', '%20')
+                        n_clean = n.replace('%20', ' ')
+                        items.append(n_clean + "###" + u + '\n')
+                        fh.write('#EXTINF:-1,' + n_clean + '\n')
+                        fh.write(u + '\n')
 
             items.sort()
             for item in items:
-                name = item.split("###")[0]
-                url = item.split("###")[1]
-                self.names.append(name)
-                self.urls.append(url)
+                self.names.append(item.split("###")[0])
+                self.urls.append(item.split("###")[1])
 
             self['info'].setText(_('Please select ...'))
             self["key_green"].show()
             self['key_yellow'].show()
             showlistpars(self.names, self['text'])
-
             print('-------------sport-------------')
-
         except Exception as e:
-            print('error', str(e))
+            print('[parsasport] _gotPageLoad error:', e)
+            self['info'].setText(_('Error loading page'))
 
     def okRun(self):
-        i = len(self.names)
-        if i < 1:
+        if not self.names:
             return
-
         idx = self["text"].getSelectionIndex()
-        name = self.names[idx]
-        url = self.urls[idx]
-
+        if idx < 0 or idx >= len(self.names):
+            return
+        name, url = self.names[idx], self.urls[idx]
         try:
             content = Utils.ReadUrl2(url, referer)
-            if six.PY3:
+            if not content:
+                raise ValueError("Empty response")
+            if not six.PY2:
                 content = six.ensure_str(content)
-
             n1 = content.find('class="myButton" id=', 0)
             n2 = content.find("</button></a>", n1)
-            content = content[n1:n2]
-
-            regexvideo = '<a href="(.+?)"><b'
-            match = compile(regexvideo, DOTALL).findall(content)
-
-            for final_url in match:
-                self.session.open(Playgo, name, final_url)
-
+            if n1 == -1 or n2 == -1:
+                raise ValueError("Stream URL not found")
+            match = compile(r'<a href="(.+?)"><b', DOTALL).findall(content[n1:n2])
+            if not match:
+                raise ValueError("No video link found")
+            self.session.open(Playgo, name, match[-1])
         except Exception as e:
-            print('error', str(e))
+            print('[parsasport] okRun error:', e)
+            self.session.open(
+                MessageBox, _("Unable to extract stream:\n%s") % e,
+                MessageBox.TYPE_ERROR, timeout=5)
 
+
+# ---------------------------------------------------------------------------
+# All TV (Persian section, all categories)
+# ---------------------------------------------------------------------------
 
 class parsatv(Screen):
+    """Loads every channel from the Persian section of the mobile page."""
+
     def __init__(self, session):
         self.session = session
         skin = join(path_skin, 'settings.xml')
         with codecs.open(skin, "r", encoding="utf-8") as f:
             self.skin = f.read()
-        self.setup_title = ('Parsa TV')
+        self.setup_title = 'Parsa TV'
         Screen.__init__(self, session)
         self.setTitle(title_plug)
-        self.list = []
         self.name = 'ParsaTv'
         self.url = 'https://www.parsatv.com/m/'
         self['text'] = OneSetList([])
@@ -944,48 +859,38 @@ class parsatv(Screen):
         self.timer.start(1500, True)
         self['title'] = Label(title_plug)
         self["actions"] = ActionMap(
-            [
-                "OkCancelActions",
-                "ColorActions",
-                "ButtonSetupActions",
-                "DirectionActions"
-            ],
+            ["OkCancelActions", "ColorActions", "ButtonSetupActions",
+             "DirectionActions"],
             {
                 "ok": self.okRun,
                 "green": self.okRun,
                 "red": self.close,
                 "yellow": self.convert,
-                "cancel": self.close
+                "cancel": self.close,
             },
-            -2
+            -2,
         )
         self.onLayoutFinish.append(self.layoutFinished)
 
     def layoutFinished(self):
-        payp = paypal()
-        self["paypal"].setText(payp)
+        self["paypal"].setText(paypal())
         self.setTitle(self.setup_title)
 
     def convert(self, answer=None):
         if answer is None:
             self.session.openWithCallback(
-                self.convert,
-                MessageBox,
-                _(
-                    "Do you want to Convert to favorite .tv?\n\n"
-                    "Attention!! It may take some time depending\n"
-                    "on the number of streams contained!!!"
-                )
-            )
+                self.convert, MessageBox,
+                _("Do you want to convert to a favorite .tv bouquet?\n\n"
+                  "Warning: this may take a while depending on the\n"
+                  "number of streams contained!"))
         elif answer:
-            namex = self.name.lower()
-            namex = namex.replace(' ', '-').strip()
+            namex = self.name.lower().replace(' ', '-').strip()
             if Utils.DreamOS():
                 from Tools.BoundFunction import boundFunction
                 self.timer_conn = self.timer.timeout.connect(
                     boundFunction(make_m3u2, namex))
             else:
-                self.timer.callback.append(make_m3u2(namex))
+                self.timer.callback.append(partial(make_m3u2, namex))
             self.timer.start(500, True)
 
     def _gotPageLoad(self):
@@ -995,82 +900,86 @@ class parsatv(Screen):
         url = self.url
         namex = self.name.lower().replace(' ', '-').strip()
 
-        if exists(downloadparsa):
-            xxxname = downloadparsa + namex + '_conv.m3u'
-        else:
-            xxxname = '/tmp/' + namex + '_conv.m3u'
+        xxxname = (downloadparsa + namex + '_conv.m3u'
+                   if exists(downloadparsa) else '/tmp/' + namex + '_conv.m3u')
 
         try:
             content = Utils.ReadUrl2(url, referer)
-            if six.PY3:
+            if not content:
+                self['info'].setText(_('Network error - please retry'))
+                return
+            if not six.PY2:
                 content = six.ensure_str(content)
 
-            n1 = content.find('<td id="persian">', 0)
-            n2 = content.find("</ul></td>", n1)
-            content = content[n1:n2]
+            n1 = content.find('<td id="persian">')
+            if n1 == -1:
+                self['info'].setText(_('Persian category not found'))
+                return
+            content = content[n1:]
 
-            regexvideo = '<li><a href="(.+?)#.*?"><button.*?myButton">(.+?)</button'
-            match = compile(regexvideo, DOTALL).findall(content)
+            match = compile(
+                r'<li><a href="(.+?)#.*?"><button.*?myButton">(.+?)</button',
+                DOTALL).findall(content)
 
-            with open(xxxname, 'w') as e:
-                e.write("#EXTM3U\n")
-                for url_item, name_item in match:
-                    if url_item.startswith('http'):
-                        url_fixed = url_item.replace(' ', '%20')
-                        name_fixed = name_item.replace('%20', ' ')
-                        item = name_fixed + "###" + url_fixed + '\n'
-                        items.append(item)
-                        # save m3u entries
-                        e.write('#EXTINF:-1,' + name_fixed + '\n')
-                        # e.write("#EXTVLCOPT:http-user-agent=fake_UA\n")
-                        e.write(url_fixed + '\n')
+            with open(xxxname, 'w') as fh:
+                fh.write("#EXTM3U\n")
+                for u_item, n_item in match:
+                    if u_item.startswith('http'):
+                        u_fixed = u_item.replace(' ', '%20')
+                        n_fixed = n_item.replace('%20', ' ')
+                        items.append(n_fixed + "###" + u_fixed + '\n')
+                        fh.write('#EXTINF:-1,' + n_fixed + '\n')
+                        fh.write(u_fixed + '\n')
 
             items.sort()
             for item in items:
-                name_split = item.split("###")[0]
-                url_split = item.split("###")[1]
-                self.names.append(name_split)
-                self.urls.append(url_split)
+                self.names.append(item.split("###")[0])
+                self.urls.append(item.split("###")[1])
 
             self['info'].setText(_('Please select ...'))
             self["key_green"].show()
             self['key_yellow'].show()
             showlistpars(self.names, self['text'])
             print('-------------parsatv-------------')
-
         except Exception as e:
-            print('error', str(e))
+            print('[parsatv] _gotPageLoad error:', e)
+            self['info'].setText(_('Error loading page'))
 
     def okRun(self):
-        if len(self.names) < 1:
+        if not self.names:
             return
-
         idx = self["text"].getSelectionIndex()
-        name = self.names[idx]
-        url = self.urls[idx]
-
+        if idx < 0 or idx >= len(self.names):
+            return
+        name, url = self.names[idx], self.urls[idx]
         try:
             content = Utils.ReadUrl2(url, referer)
-            if six.PY3:
+            if not content:
+                raise ValueError("Empty response")
+            if not six.PY2:
                 content = six.ensure_str(content)
-
             n1 = content.find('class="myButton" id=', 0)
             n2 = content.find("</button></a>", n1)
-            content = content[n1:n2]
-
-            regexvideo = '<a href="(.+?)"><b'
-            match = compile(regexvideo, DOTALL).findall(content)
-
-            for video_url in match:
-                self.session.open(Playgo, name, video_url)
-
+            if n1 == -1 or n2 == -1:
+                raise ValueError("Stream URL not found")
+            match = compile(r'<a href="(.+?)"><b', DOTALL).findall(content[n1:n2])
+            if not match:
+                raise ValueError("No video link found")
+            self.session.open(Playgo, name, match[-1])
         except Exception as e:
-            print('error', str(e))
+            print('[parsatv] okRun error:', e)
+            self.session.open(
+                MessageBox, _("Unable to extract stream:\n%s") % e,
+                MessageBox.TYPE_ERROR, timeout=5)
 
 
-class TvInfoBarShowHide():
-    """ InfoBar show/hide control, accepts toggleShow and hide actions, might start
-    fancy animations. """
+# ---------------------------------------------------------------------------
+# Infobar show/hide
+# ---------------------------------------------------------------------------
+
+class TvInfoBarShowHide:
+    """InfoBar show/hide control."""
+
     STATE_HIDDEN = 0
     STATE_HIDING = 1
     STATE_SHOWING = 2
@@ -1079,18 +988,17 @@ class TvInfoBarShowHide():
 
     def __init__(self):
         self["ShowHideActions"] = ActionMap(
-            ["InfobarShowHideActions"], {
-                "toggleShow": self.OkPressed, "hide": self.hide}, 0)
+            ["InfobarShowHideActions"],
+            {"toggleShow": self.OkPressed, "hide": self.hide}, 0)
         self.__event_tracker = ServiceEventTracker(
-            screen=self, eventmap={
-                iPlayableService.evStart: self.serviceStarted})
+            screen=self,
+            eventmap={iPlayableService.evStart: self.serviceStarted})
         self.__state = self.STATE_SHOWN
         self.__locked = 0
         self.hideTimer = eTimer()
         try:
-            self.hideTimer_conn = self.hideTimer.timeout.connect(
-                self.doTimerHide)
-        except BaseException:
+            self.hideTimer_conn = self.hideTimer.timeout.connect(self.doTimerHide)
+        except Exception:
             self.hideTimer.callback.append(self.doTimerHide)
         self.hideTimer.start(5000, True)
         self.onShow.append(self.__onShow)
@@ -1111,9 +1019,8 @@ class TvInfoBarShowHide():
             self.startHideTimer()
 
     def serviceStarted(self):
-        if self.execing:
-            if config.usage.show_infobar_on_zap.value:
-                self.doShow()
+        if self.execing and config.usage.show_infobar_on_zap.value:
+            self.doShow()
 
     def __onShow(self):
         self.__state = self.STATE_SHOWN
@@ -1142,7 +1049,7 @@ class TvInfoBarShowHide():
     def lockShow(self):
         try:
             self.__locked += 1
-        except BaseException:
+        except Exception:
             self.__locked = 0
         if self.execing:
             self.show()
@@ -1152,16 +1059,19 @@ class TvInfoBarShowHide():
     def unlockShow(self):
         try:
             self.__locked -= 1
-        except BaseException:
+        except Exception:
             self.__locked = 0
-        if self.__locked < 0:
-            self.__locked = 0
+        self.__locked = max(self.__locked, 0)
         if self.execing:
             self.startHideTimer()
 
-    def debug(obj, text=""):
-        print(text + " %s\n" % obj)
+    def debug(self, obj, text=""):
+        print("{} {}\n".format(text, obj))
 
+
+# ---------------------------------------------------------------------------
+# Player
+# ---------------------------------------------------------------------------
 
 class Playgo(
     InfoBarBase,
@@ -1171,7 +1081,7 @@ class Playgo(
     InfoBarSubtitleSupport,
     InfoBarNotifications,
     TvInfoBarShowHide,
-    Screen
+    Screen,
 ):
     STATE_IDLE = 0
     STATE_PLAYING = 1
@@ -1187,127 +1097,83 @@ class Playgo(
         self.skinName = 'MoviePlayer'
         streaml = False
         self.allowPiP = False
-        # InfoBarSeek.__init__(self, ActionMap='InfobarSeekActions')
         self.service = None
         self.url = url
         self.pcip = 'None'
         self.name = html_conv.html_unescape(name)
         self.state = self.STATE_PLAYING
-        for x in (
-            InfoBarBase,
-            InfoBarMenu,
-            InfoBarSeek,
-            InfoBarAudioSelection,
-            InfoBarSubtitleSupport,
-            InfoBarNotifications,
-            TvInfoBarShowHide
-        ):
+        for x in (InfoBarBase, InfoBarMenu, InfoBarSeek, InfoBarAudioSelection,
+                  InfoBarSubtitleSupport, InfoBarNotifications, TvInfoBarShowHide):
             x.__init__(self)
 
         SREF = self.session.nav.getCurrentlyPlayingServiceReference()
         self["actions"] = ActionMap(
-            [
-                "MoviePlayerActions",
-                "MovieSelectionActions",
-                "MediaPlayerActions",
-                "EPGSelectActions",
-                "MediaPlayerSeekActions",
-                "ColorActions",
-                "OkCancelActions",
-                "InfobarShowHideActions",
-                "InfobarActions",
-                "InfobarSeekActions"
-            ],
+            ["MoviePlayerActions", "MovieSelectionActions", "MediaPlayerActions",
+             "EPGSelectActions", "MediaPlayerSeekActions", "ColorActions",
+             "OkCancelActions", "InfobarShowHideActions", "InfobarActions",
+             "InfobarSeekActions"],
             {
                 "leavePlayer": self.cancel,
                 "epg": self.showIMDB,
                 "info": self.showIMDB,
-                # "info": self.cicleStreamType,
                 "tv": self.cicleStreamType,
                 "stop": self.leavePlayer,
                 "cancel": self.cancel,
                 "exit": self.leavePlayer,
-                # "down": self.av,
-                "back": self.cancel
+                "back": self.cancel,
             },
-            -1
+            -1,
         )
 
         if '8088' in str(self.url):
-            # self.onLayoutFinish.append(self.slinkPlay)
             self.onFirstExecBegin.append(self.slinkPlay)
         else:
-            # self.onLayoutFinish.append(self.cicleStreamType)
             self.onFirstExecBegin.append(self.cicleStreamType)
         self.onClose.append(self.cancel)
 
     def showIMDB(self):
-        text_clear = self.name
-        if returnIMDB(text_clear):
+        if returnIMDB(self.name):
             print('show imdb/tmdb')
 
     def slinkPlay(self, url):
-        name = self.name
-        ref = "{0}:{1}".format(
-            url.replace(
-                ":", "%3a"), name.replace(
-                ":", "%3a"))
+        ref = "{}:{}".format(
+            url.replace(":", "%3a"), self.name.replace(":", "%3a"))
         print('final reference:   ', ref)
         sref = eServiceReference(ref)
-        sref.setName(str(name))
+        sref.setName(str(self.name))
         self.session.nav.stopService()
         self.session.nav.playService(sref)
 
     def openTest(self, servicetype, url):
-        name = self.name
-        ref = "{0}:0:1:0:0:0:0:0:0:0:{1}:{2}".format(
-            servicetype, url.replace(
-                ":", "%3a"), name.replace(
-                ":", "%3a"))
-        print('reference:   ', ref)
+        ref = "{}:0:1:0:0:0:0:0:0:0:{}:{}".format(
+            servicetype,
+            url.replace(":", "%3a"),
+            self.name.replace(":", "%3a"))
         if streaml is True:
             url = 'http://127.0.0.1:8088/' + str(url)
-            ref = "{0}:0:1:0:0:0:0:0:0:0:{1}:{2}".format(
-                servicetype, url.replace(
-                    ":", "%3a"), name.replace(
-                    ":", "%3a"))
+            ref = "{}:0:1:0:0:0:0:0:0:0:{}:{}".format(
+                servicetype,
+                url.replace(":", "%3a"),
+                self.name.replace(":", "%3a"))
             print('streaml reference:   ', ref)
         print('final reference:   ', ref)
         sref = eServiceReference(ref)
-        sref.setName(str(name))
+        sref.setName(str(self.name))
         self.session.nav.stopService()
         self.session.nav.playService(sref)
 
     def cicleStreamType(self):
         from itertools import cycle, islice
         self.servicetype = '4097'
-        print('servicetype1: ', self.servicetype)
         url = str(self.url)
         streamtypelist = ["4097"]
-        """
-        # if str(splitext(url)[-1]) == ".m3u8":
-            # if self.servicetype == "1":
-                # self.servicetype = "4097"
-        # if "youtube" in str(self.url):
-            # self.mbox = self.session.open(MessageBox, _('For Stream Youtube coming soon!'), MessageBox.TYPE_INFO, timeout=5)
-            # return
-        # if Utils.isStreamlinkAvailable():
-            # streamtypelist.append("5002")  # ref = '5002:0:1:0:0:0:0:0:0:0:http%3a//127.0.0.1%3a8088/' + url
-            # streaml = True
-        # if exists("/usr/bin/gstplayer"):
-            # streamtypelist.append("5001")
-        # if exists("/usr/bin/exteplayer3"):
-            # streamtypelist.append("5002")
-        """
         if exists("/usr/bin/apt-get"):
             streamtypelist.append("8193")
-        for index, item in enumerate(streamtypelist, start=0):
-            if str(item) == str(self.servicetype):
-                currentindex = index
-                break
+        currentindex = next(
+            (i for i, item in enumerate(streamtypelist)
+             if str(item) == str(self.servicetype)), 0)
         nextStreamType = islice(cycle(streamtypelist), currentindex + 1, None)
         self.servicetype = str(next(nextStreamType))
-        print('servicetype2: ', self.servicetype)
         self.openTest(self.servicetype, url)
 
     def up(self):
@@ -1327,7 +1193,6 @@ class Playgo(
             self.hideInfobar()
         if self.infoCallback is not None:
             self.infoCallback()
-        return
 
     def showAfterSeek(self):
         if isinstance(self, TvInfoBarShowHide):
@@ -1338,12 +1203,16 @@ class Playgo(
             remove('/tmp/hls.avi')
         self.session.nav.stopService()
         self.session.nav.playService(SREF)
-        aspect_manager.restore_aspect
+        aspect_manager.restore_aspect()
         self.close()
 
     def leavePlayer(self):
         self.cancel()
 
+
+# ---------------------------------------------------------------------------
+# Helpers
+# ---------------------------------------------------------------------------
 
 def make_m3u2(namex):
     if not Utils.checkInternet():
@@ -1360,161 +1229,150 @@ def make_m3u2(namex):
         return
 
     try:
-        with open(xxxnamex, 'w') as e:
-            e.write("#EXTM3U\n")
-
-            with open(xxxname, 'rb') as file_read:
-                lines = [x.decode('utf8').strip()
-                         for x in file_read.readlines()]
+        with open(xxxnamex, 'w') as out:
+            out.write("#EXTM3U\n")
+            with open(xxxname, 'rb') as src:
+                lines = [x.decode('utf8').strip() for x in src]
 
             for line in lines:
                 line = line.replace(' ', '%20')
 
                 if line.startswith('#EXTINF'):
-                    name = line.split(',')[-1].replace('%20', ' ').rstrip('\n')
-                    e.write('#EXTINF:-1,' + name + '\n')
+                    name = line.split(',', 1)[-1].replace('%20', ' ').rstrip('\n')
+                    out.write('#EXTINF:-1,' + name + '\n')
 
                 elif line.startswith("http"):
                     req = Request(line)
                     req.add_header(
                         'User-Agent',
-                        'Mozilla/5.0 (Windows; U; Windows NT 5.1; en-GB; rv:1.8.1.14) Gecko/20080404 Firefox/2.0.0.14')
-
+                        'Mozilla/5.0 (Windows; U; Windows NT 5.1; en-GB; '
+                        'rv:1.8.1.14) Gecko/20080404 Firefox/2.0.0.14')
                     r = urlopen(req, None, 15)
                     content = r.read()
                     r.close()
-
+                    if not content:
+                        continue
                     if isinstance(content, bytes):
                         try:
                             content = content.decode("utf-8")
                         except Exception as e:
-                            print("Error decoding content: ", str(e))
+                            print("Error decoding content:", e)
 
                     n1 = content.find('class="myButton" id=')
                     n2 = content.find("</button></a>", n1)
                     content2 = content[n1:n2] if n1 != -1 and n2 != -1 else ''
 
                     if content2:
-                        regexvideo = '<a href="(.+?)"><b'
-                        match = compile(regexvideo, DOTALL).findall(content2)
-
-                        for url2 in match:
+                        for url2 in compile(
+                                r'<a href="(.+?)"><b', DOTALL).findall(content2):
                             if url2.startswith('http'):
-                                url2 = url2.replace(' ', '%20')
-                                e.write(url2 + '\n')
+                                out.write(url2.replace(' ', '%20') + '\n')
 
         convert_bouquet(namex)
-
     except Exception as e:
-        print('error ', str(e))
+        print('make_m3u2 error:', e)
 
 
 def convert_bouquet(namex):
-    type = "tv"
-    if "radio" in namex.lower():
-        type = "radio"
+    btype = "radio" if "radio" in namex.lower() else "tv"
 
     name_file = namex.replace("/", "_").replace(",", "").replace(" ", "-")
-    cleanName = sub(r'[\<\>\:\"\/\\\|\?\*]', "_", str(name_file))
+    cleanName = sub(r'[<>:"/\\|?*]', "_", str(name_file))
     cleanName = sub(r" ", "_", cleanName)
     cleanName = sub(r"\d+:\d+:[\d.]+", "_", cleanName)
     name_file = sub(r"_+", "_", cleanName)
-    bouquetname = "userbouquet.%s.%s" % (name_file.lower(), type.lower())
+    bouquetname = "userbouquet.{}.{}".format(name_file.lower(), btype.lower())
 
-    print("Converting Bouquet %s" % name_file)
+    print("Converting bouquet {}".format(name_file))
 
     if exists(downloadparsa):
-        file = str(downloadparsa) + str(namex) + ".m3u"
+        src_file = str(downloadparsa) + str(namex) + ".m3u"
     else:
-        file = "/tmp/" + str(namex) + ".m3u"
+        src_file = "/tmp/" + str(namex) + ".m3u"
 
-    if not exists(file):
+    if not exists(src_file):
         return
 
     path1 = "/etc/enigma2/" + str(bouquetname)
-    path2 = "/etc/enigma2/bouquets." + str(type.lower())
+    path2 = "/etc/enigma2/bouquets." + str(btype.lower())
 
-    if exists(file) and stat(file).st_size > 0:
-        tmplist = []
-        tmplist.append("#NAME %s (%s)" % (name_file.upper(), type.upper()))
-        tmplist.append(
-            "#SERVICE 1:64:0:0:0:0:0:0:0:0::%s CHANNELS" %
-            name_file)
-        tmplist.append("#DESCRIPTION --- %s ---" % name_file)
+    if stat(src_file).st_size == 0:
+        return
 
-        namel = ""
-        servicez = ""
-        descriptionz = ""
+    tmplist = [
+        "#NAME {} ({})".format(name_file.upper(), btype.upper()),
+        "#SERVICE 1:64:0:0:0:0:0:0:0:0::{} CHANNELS".format(name_file),
+        "#DESCRIPTION --- {} ---".format(name_file),
+    ]
 
-        for line in open(file):
+    namel = ""
+    servicez = ""
+    descriptionz = ""
+
+    with open(src_file) as src:
+        for line in src:
             if line.startswith("#EXTINF"):
-                namel = "%s" % line.split(",")[-1]
-                descriptiona = ("#DESCRIPTION %s" % namel).splitlines()
-                descriptionz = "".join(descriptiona)
-
+                namel = "{}".format(line.split(",", 1)[-1])
+                descriptionz = "".join(
+                    ("#DESCRIPTION %s" % namel).splitlines())
             elif line.startswith("http"):
-                tag = "1"
-                if type.upper() == "RADIO":
-                    tag = "2"
-
-                servicea = "#SERVICE 4097:0:%s:0:0:0:0:0:0:0:%s" % (
+                tag = "2" if btype.upper() == "RADIO" else "1"
+                servicea = "#SERVICE 4097:0:{}:0:0:0:0:0:0:0:{}".format(
                     tag, line.replace(":", "%3a"))
-                servicez = (servicea + ":" + namel).splitlines()
-                servicez = "".join(servicez)
+                servicez = "".join(
+                    (servicea + ":" + namel).splitlines())
 
             if servicez not in tmplist:
                 tmplist.append(servicez)
                 tmplist.append(descriptionz)
 
-        # Write bouquet file
-        with open(path1, "w+") as f:
-            # Read file content once to check duplicates
-            f_content = f.read()
-            for item in tmplist:
-                if item not in f_content:
-                    f.write("%s\n" % item)
-                    print("item  -------- ", item)
+    with open(path1, "w+") as fh:
+        existing = fh.read()
+        for item in tmplist:
+            if item not in existing:
+                fh.write("%s\n" % item)
+                print("item -------- ", item)
 
-        # Check if bouquet is already in bouquets file
-        in_bouquets = 0
-        with open("/etc/enigma2/bouquets.%s" % type.lower()) as f:
-            for line in f:
+    in_bouquets = 0
+    if exists(path2):
+        with open(path2) as fh:
+            for line in fh:
                 if bouquetname in line:
                     in_bouquets = 1
                     break
 
-        # Append bouquet to bouquets file if not present
-        if in_bouquets == 0:
-            with open(path2, "a+") as f:
-                bouquetTvString = "#SERVICE 1:7:1:0:0:0:0:0:0:0:FROM BOUQUET \"" + \
-                    str(bouquetname) + "\" ORDER BY bouquet\n"
-                f.write(bouquetTvString)
+    if in_bouquets == 0:
+        with open(path2, "a+") as fh:
+            fh.write(
+                '#SERVICE 1:7:1:0:0:0:0:0:0:0:FROM BOUQUET "'
+                + str(bouquetname) + '" ORDER BY bouquet\n')
 
-        # Reload bouquets and servicelist
-        try:
-            from enigma import eDVBDB
-            eDVBDB.getInstance().reloadServicelist()
-            eDVBDB.getInstance().reloadBouquets()
-            print("all bouquets reloaded...")
-        except BaseException:
-            os_system(
-                "wget -qO - http://127.0.0.1/web/servicelistreload?mode=2 > /dev/null 2>&1 &")
-            print("bouquets reloaded...")
+    try:
+        from enigma import eDVBDB
+        eDVBDB.getInstance().reloadServicelist()
+        eDVBDB.getInstance().reloadBouquets()
+        print("all bouquets reloaded...")
+    except Exception:
+        os_system(
+            "wget -qO - http://127.0.0.1/web/servicelistreload?mode=2 "
+            "> /dev/null 2>&1 &")
+        print("bouquets reloaded...")
 
-        _session.open(
-            MessageBox,
-            _("bouquets reloaded.."),
-            MessageBox.TYPE_INFO,
-            timeout=5)
+    _session.open(
+        MessageBox, _("Bouquets reloaded."),
+        MessageBox.TYPE_INFO, timeout=5)
 
+
+# ---------------------------------------------------------------------------
+# Plugin entry points
+# ---------------------------------------------------------------------------
 
 def main(session, **kwargs):
     try:
         session.open(MainParsa)
-    except BaseException:
+    except Exception:
         import traceback
         traceback.print_exc()
-        pass
 
 
 def Plugins(**kwargs):
@@ -1526,7 +1384,7 @@ def Plugins(**kwargs):
         description=desc_plugin,
         where=PluginDescriptor.WHERE_EXTENSIONSMENU,
         fnc=main,
-        needsRestart=True
+        needsRestart=True,
     )
     result = [
         PluginDescriptor(
@@ -1534,8 +1392,8 @@ def Plugins(**kwargs):
             description=desc_plugin,
             where=PluginDescriptor.WHERE_PLUGINMENU,
             icon=ico_path,
-            fnc=main
-        )
+            fnc=main,
+        ),
+        extensions_menu,
     ]
-    result.append(extensions_menu)
     return result

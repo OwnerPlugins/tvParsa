@@ -1,7 +1,7 @@
 #!/bin/bash
 
-version='1.8'
-changelog='\nRecoded PEP8'
+version='1.9'
+changelog='Bug fixes: content guards, direct sport category scraping, functools.partial for convert(), match[-1] in okRun, n1==-1 handling, split(",",1) for comma names, all strings in English'
 
 TMPPATH=/tmp/tvParsa-install
 FILEPATH=/tmp/tvParsa-main.tar.gz

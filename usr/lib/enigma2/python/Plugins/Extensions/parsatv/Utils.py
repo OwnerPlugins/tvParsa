@@ -87,7 +87,9 @@ _ESCAPE_DICT = {
 if sys.version_info[0] < 3:
     # Python 2
     def u(x):
-        return x.decode('utf-8')
+        if isinstance(x, bytes):
+            return x.decode('utf-8')
+        return x
 else:
     # Python 3
     def u(x):
@@ -537,13 +539,8 @@ def downloadFile(url, target):
         from urllib2 import HTTPError, URLError
     try:
         response = urlopen(url, None, 15)
-        with open(target, 'wb') as output:
-            print('response: ', response)
-            if PY3:
-                output.write(response.read().decode('utf-8'))
-            else:
-                output.write(response.read())
-            # output.write(response.read())
+        with open(target, 'w', encoding='utf-8') as output:
+            output.write(response.read().decode('utf-8'))
         response.close()
         return True
     except HTTPError:
