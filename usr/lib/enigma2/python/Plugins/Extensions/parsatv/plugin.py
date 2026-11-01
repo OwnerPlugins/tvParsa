@@ -282,22 +282,24 @@ class MainParsa(Screen):
         self.Update = False
         self.new_version = '0.0'
         self.new_changelog = ''
-        self["actions"] = ActionMap(
-            ["OkCancelActions", "ColorActions", "HotkeyActions", "InfobarEPGActions",
-             "ChannelSelectBaseActions", "DirectionActions"],
-            {
-                "yellow": self.update_me,
-                "yellow_long": self.update_dev,
-                "info_long": self.update_dev,
-                "infolong": self.update_dev,
-                "showEventInfoPlugin": self.update_dev,
-                "ok": self.okRun,
-                "green": self.okRun,
-                "cancel": self.closerm,
-                "red": self.closerm,
-            },
-            -1,
-        )
+        self["actions"] = ActionMap(["OkCancelActions",
+                                     "ColorActions",
+                                     "HotkeyActions",
+                                     "InfobarEPGActions",
+                                     "ChannelSelectBaseActions",
+                                     "DirectionActions"],
+                                    {"yellow": self.update_me,
+                                     "yellow_long": self.update_dev,
+                                     "info_long": self.update_dev,
+                                     "infolong": self.update_dev,
+                                     "showEventInfoPlugin": self.update_dev,
+                                     "ok": self.okRun,
+                                     "green": self.okRun,
+                                     "cancel": self.closerm,
+                                     "red": self.closerm,
+                                     },
+                                    -1,
+                                    )
 
         self.timer = eTimer()
         if exists('/var/lib/dpkg/status'):
