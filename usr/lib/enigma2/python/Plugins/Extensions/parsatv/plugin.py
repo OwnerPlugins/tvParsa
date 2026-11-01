@@ -283,7 +283,7 @@ class MainParsa(Screen):
         self.new_version = '0.0'
         self.new_changelog = ''
         self["actions"] = ActionMap(
-            ["OkCancelActions", "HotkeyActions", "InfobarEPGActions",
+            ["OkCancelActions", "ColorActions", "HotkeyActions", "InfobarEPGActions",
              "ChannelSelectBaseActions", "DirectionActions"],
             {
                 "yellow": self.update_me,
